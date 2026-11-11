@@ -177,7 +177,7 @@ python3 scripts/render.py path/to/london-2027-03.json    # 只用标准库
 | `events[]` | 这几天的活动：`{name, cat, date, place, price, why(html), url}` |
 | `shows[]` | 大型演出和脱口秀：`{name, kind: concert / comedy / theatre / festival, status: onsale / few / soldout / resale / soon, date, venue, lang, price, why(html), url}` |
 | `showsNote` | html，查了哪些来源、差几天的演出、或者「这几天没有找到」；`shows` 为空时也会单独显示 |
-| `media[]` | 电影、书、纪录片：`{kind: film / doc / series / book / podcast, title（中文名）, original（原名）, year, creator, lang, where, tag, why(html), url}`，页面自动按类型分组 |
+| `media[]` | 电影、书、纪录片：`{kind: film / doc / series / book / podcast, title（显示名；英文版写英文片名 / 书名）, original（原名，和 title 相同时不重复显示）, year, creator, lang, where, tag, why(html), url}`，页面自动按类型分组 |
 | `mediaNote` | html，媒体部分的说明 |
 | `tours[]` | free walking tour：`{name, platform, rating, count, schedule, duration, lang, why(html), url}`；`toursNote` 写门槛 |
 | `pool[]` | 备选：`{name, cat, area, hours, price, why(html), url, lat, lng}` |
