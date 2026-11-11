@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+# Your own itineraries (may contain personal details) are not committed by default
+plans/
+europe-city-culture-planner.zip

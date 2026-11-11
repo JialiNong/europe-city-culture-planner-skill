@@ -1,0 +1,657 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/JialiNong/europe-city-culture-planner-skill/europe-city-culture-planner/schema/city.schema.json",
+  "title": "城市文艺行程页数据 / City itinerary page data",
+  "description": "europe-city-culture-planner 输出的行程数据。任何文本字段都可以写成 {\"zh\": …, \"en\": …}；标注 html 的字段允许 <b> <i> <a> <br> 等行内标签。",
+  "type": "object",
+  "required": [
+    "title",
+    "city",
+    "queriedAt",
+    "days"
+  ],
+  "properties": {
+    "lang": {
+      "enum": [
+        "zh",
+        "en"
+      ],
+      "description": "Language shown first. 默认显示的语言。"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "zh",
+          "en"
+        ]
+      },
+      "description": "Languages the content is written in; the page shows a switch when there are two. 内容包含的语言，两种时页面显示切换按钮。"
+    },
+    "title": {
+      "$ref": "#/$defs/text",
+      "description": "页面标题，两到四个词"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "city": {
+      "$ref": "#/$defs/text"
+    },
+    "country": {
+      "$ref": "#/$defs/text"
+    },
+    "dateLabel": {
+      "$ref": "#/$defs/text",
+      "description": "例如「2027 年 3 月 26–30 日」"
+    },
+    "eyebrow": {
+      "$ref": "#/$defs/text",
+      "description": "可选，覆盖页头小字"
+    },
+    "heading": {
+      "$ref": "#/$defs/text",
+      "description": "可选，覆盖大标题"
+    },
+    "queriedAt": {
+      "$ref": "#/$defs/text",
+      "description": "查询时间"
+    },
+    "intro": {
+      "$ref": "#/$defs/text",
+      "description": "html：排了哪几天、口味要点"
+    },
+    "verdict": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "$ref": "#/$defs/texts",
+          "description": "html：这次最值得的 3–5 件事"
+        },
+        "alerts": {
+          "$ref": "#/$defs/texts",
+          "description": "html：提示框"
+        }
+      }
+    },
+    "bookAhead": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "status": {
+            "enum": [
+              "urgent",
+              "soon",
+              "ok",
+              "done"
+            ]
+          },
+          "deadline": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "需要提前订的，页面按紧急程度自动排序"
+    },
+    "skipNote": {
+      "$ref": "#/$defs/text",
+      "description": "html：说明到达日、离开日没排"
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/$defs/text"
+          },
+          "theme": {
+            "$ref": "#/$defs/text"
+          },
+          "note": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "stops": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "$ref": "#/$defs/text",
+                  "description": "例如 09:30；总时间线按它显示"
+                },
+                "name": {
+                  "$ref": "#/$defs/text"
+                },
+                "cat": {
+                  "enum": [
+                    "market",
+                    "arch",
+                    "art",
+                    "artclassic",
+                    "alt",
+                    "view",
+                    "ride",
+                    "tour",
+                    "history",
+                    "nature",
+                    "event",
+                    "food",
+                    "other"
+                  ],
+                  "description": "类别，决定颜色和图例 / category, sets colour and legend: market 菜市场, arch 建筑, art 现当代艺术, artclassic 古典艺术, alt 另类街区, view 登高望远, ride 交通体验, tour 城市导览, history 沉重历史, nature 自然/海岛, event 活动, food 吃, other 其他"
+                },
+                "area": {
+                  "$ref": "#/$defs/text"
+                },
+                "duration": {
+                  "$ref": "#/$defs/text"
+                },
+                "hours": {
+                  "$ref": "#/$defs/text"
+                },
+                "price": {
+                  "$ref": "#/$defs/text"
+                },
+                "why": {
+                  "$ref": "#/$defs/text",
+                  "description": "html：为什么合用户口味，不写百科介绍"
+                },
+                "booking": {
+                  "$ref": "#/$defs/text",
+                  "description": "html：提前预订或注意事项，红字显示"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "http(s) 链接 / http(s) link"
+                },
+                "lat": {
+                  "type": "number"
+                },
+                "lng": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "description": "按时间顺序"
+          },
+          "backup": {
+            "$ref": "#/$defs/text",
+            "description": "html：下雨 / 关门的备选"
+          }
+        },
+        "required": [
+          "stops"
+        ]
+      }
+    },
+    "exhibitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/$defs/text"
+          },
+          "venue": {
+            "$ref": "#/$defs/text"
+          },
+          "until": {
+            "$ref": "#/$defs/text"
+          },
+          "price": {
+            "$ref": "#/$defs/text"
+          },
+          "match": {
+            "$ref": "#/$defs/text",
+            "description": "例如「像 Klimt」「议题型」"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "cat": {
+            "enum": [
+              "market",
+              "arch",
+              "art",
+              "artclassic",
+              "alt",
+              "view",
+              "ride",
+              "tour",
+              "history",
+              "nature",
+              "event",
+              "food",
+              "other"
+            ],
+            "description": "类别，决定颜色和图例 / category, sets colour and legend: market 菜市场, arch 建筑, art 现当代艺术, artclassic 古典艺术, alt 另类街区, view 登高望远, ride 交通体验, tour 城市导览, history 沉重历史, nature 自然/海岛, event 活动, food 吃, other 其他"
+          },
+          "date": {
+            "$ref": "#/$defs/text"
+          },
+          "place": {
+            "$ref": "#/$defs/text"
+          },
+          "price": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "shows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "kind": {
+            "enum": [
+              "concert",
+              "comedy",
+              "theatre",
+              "festival"
+            ]
+          },
+          "status": {
+            "enum": [
+              "onsale",
+              "few",
+              "soldout",
+              "resale",
+              "soon"
+            ]
+          },
+          "date": {
+            "$ref": "#/$defs/text"
+          },
+          "venue": {
+            "$ref": "#/$defs/text"
+          },
+          "lang": {
+            "$ref": "#/$defs/text",
+            "description": "演出语言，脱口秀必写"
+          },
+          "price": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "showsNote": {
+      "$ref": "#/$defs/text",
+      "description": "html：查了哪些来源、差几天的演出，或者「这几天没有」；shows 为空时也会显示"
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "film",
+              "doc",
+              "series",
+              "book",
+              "podcast"
+            ]
+          },
+          "title": {
+            "$ref": "#/$defs/text",
+            "description": "显示名；英文模式下用英文名"
+          },
+          "original": {
+            "$ref": "#/$defs/text",
+            "description": "原名，和 title 相同时不重复显示"
+          },
+          "year": {
+            "$ref": "#/$defs/text"
+          },
+          "creator": {
+            "$ref": "#/$defs/text"
+          },
+          "lang": {
+            "$ref": "#/$defs/text",
+            "description": "例如「英语」「丹麦语，中英字幕」"
+          },
+          "where": {
+            "$ref": "#/$defs/text"
+          },
+          "tag": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    "mediaNote": {
+      "$ref": "#/$defs/text",
+      "description": "html"
+    },
+    "tours": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "platform": {
+            "$ref": "#/$defs/text"
+          },
+          "rating": {
+            "$ref": "#/$defs/text"
+          },
+          "count": {
+            "$ref": "#/$defs/text"
+          },
+          "schedule": {
+            "$ref": "#/$defs/text"
+          },
+          "duration": {
+            "$ref": "#/$defs/text"
+          },
+          "lang": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "toursNote": {
+      "$ref": "#/$defs/text",
+      "description": "html：门槛"
+    },
+    "pool": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "cat": {
+            "enum": [
+              "market",
+              "arch",
+              "art",
+              "artclassic",
+              "alt",
+              "view",
+              "ride",
+              "tour",
+              "history",
+              "nature",
+              "event",
+              "food",
+              "other"
+            ],
+            "description": "类别，决定颜色和图例 / category, sets colour and legend: market 菜市场, arch 建筑, art 现当代艺术, artclassic 古典艺术, alt 另类街区, view 登高望远, ride 交通体验, tour 城市导览, history 沉重历史, nature 自然/海岛, event 活动, food 吃, other 其他"
+          },
+          "area": {
+            "$ref": "#/$defs/text"
+          },
+          "hours": {
+            "$ref": "#/$defs/text"
+          },
+          "price": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "没排进去但合口味的备选"
+    },
+    "beyond": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "cat": {
+            "enum": [
+              "market",
+              "arch",
+              "art",
+              "artclassic",
+              "alt",
+              "view",
+              "ride",
+              "tour",
+              "history",
+              "nature",
+              "event",
+              "food",
+              "other"
+            ],
+            "description": "类别，决定颜色和图例 / category, sets colour and legend: market 菜市场, arch 建筑, art 现当代艺术, artclassic 古典艺术, alt 另类街区, view 登高望远, ride 交通体验, tour 城市导览, history 沉重历史, nature 自然/海岛, event 活动, food 吃, other 其他"
+          },
+          "distance": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "booking": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          },
+          "url": {
+            "type": "string",
+            "description": "http(s) 链接 / http(s) link"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "1 小时圈外但很有名"
+    },
+    "skipped": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/$defs/text"
+          },
+          "why": {
+            "$ref": "#/$defs/text",
+            "description": "html"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "有意没排的热门景点"
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "paragraphs": {
+          "$ref": "#/$defs/texts",
+          "description": "html：假设、查了哪些来源、哪些没查到"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "$ref": "#/$defs/text"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "http(s) 链接 / http(s) link"
+                }
+              },
+              "required": [
+                "text",
+                "url"
+              ]
+            }
+          },
+          "description": "链接行，每行一个数组"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "description": "Text, or the same text in both languages: {\"zh\": \"…\", \"en\": \"…\"}. 文本，或者中英双语对象。",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "zh": {
+              "type": "string"
+            },
+            "en": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    },
+    "texts": {
+      "description": "A list of texts, or one list per language. 文本数组，或者每种语言一个数组。",
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "zh": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "en": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      ]
+    }
+  }
+}

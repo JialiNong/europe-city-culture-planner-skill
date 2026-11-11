@@ -1,0 +1,14 @@
+{
+  "name": "europe-city-culture-planner-skill",
+  "version": "1.0.0",
+  "description": "An AI-agent skill that plans culture-first days in mid-to-large European cities and renders a bilingual (中文 / English) itinerary page from JSON.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "render": "node europe-city-culture-planner/scripts/render.mjs",
+    "example": "node europe-city-culture-planner/scripts/render.mjs europe-city-culture-planner/examples/london-2027-03.json",
+    "package": "cd europe-city-culture-planner && zip -r ../europe-city-culture-planner.zip . -x '*.DS_Store'"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

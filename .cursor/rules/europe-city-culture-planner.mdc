@@ -1,0 +1,11 @@
+---
+description: Use when planning culture-focused days in a mid-to-large European city (museums, contemporary art, markets, architecture, viewpoints, free walking tours, concerts, stand-up) / 排欧洲城市文艺行程时使用
+globs:
+alwaysApply: false
+---
+
+Work as described in `AGENTS.md` at the repository root:
+
+- Read `europe-city-culture-planner/SKILL.md` (workflow) and `europe-city-culture-planner/profile.md` (the user's taste).
+- Write `plans/<city>-<yyyy-mm>.json` following `europe-city-culture-planner/schema/city.schema.json`; see `europe-city-culture-planner/examples/london-2027-03.json`.
+- Render with `node europe-city-culture-planner/scripts/render.mjs plans/<file>.json`; never hand-write HTML.

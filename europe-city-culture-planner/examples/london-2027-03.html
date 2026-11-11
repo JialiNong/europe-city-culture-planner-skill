@@ -1,0 +1,1923 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>London culture itinerary</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* europe-city-culture-planner：纸色底 + 克里姆特金 + 马蒂斯剪纸色 */
+:root{
+  --bg:#f6f2ea; --surface:#fffdf8; --ink:#1d1b18; --muted:#6b645a; --line:#e2dacb;
+  --gold:#a8791f; --gold-soft:#f3e8cf;
+  --c-market:#3f8f5a; --c-arch:#a8791f; --c-art:#2350a8; --c-artclassic:#7a6a55; --c-alt:#d2453a;
+  --c-view:#0f8a8a; --c-ride:#5b4bb7; --c-tour:#c4682a; --c-history:#4b4b4b; --c-nature:#4f8a2a;
+  --c-event:#c2336f; --c-food:#b9861b; --c-other:#6b645a;
+  --bad:#b03a2e;
+  --f-display:"Noto Serif SC","Songti SC",serif;
+  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#15130f; --surface:#1e1b16; --ink:#efe9de; --muted:#a59c8e; --line:#353028;
+  --gold:#e0b45a; --gold-soft:#3a2f1a;
+  --c-market:#6cc28a; --c-arch:#e0b45a; --c-art:#7f9ef0; --c-artclassic:#b9a88f; --c-alt:#f07a6e;
+  --c-view:#4fcaca; --c-ride:#a497f0; --c-tour:#ee9a5c; --c-history:#b5b5b5; --c-nature:#8fcc63;
+  --c-event:#f07aa8; --c-food:#e6bb52; --c-other:#a59c8e;
+  --bad:#ef7a6c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15130f; --surface:#1e1b16; --ink:#efe9de; --muted:#a59c8e; --line:#353028;
+  --gold:#e0b45a; --gold-soft:#3a2f1a;
+  --c-market:#6cc28a; --c-arch:#e0b45a; --c-art:#7f9ef0; --c-artclassic:#b9a88f; --c-alt:#f07a6e;
+  --c-view:#4fcaca; --c-ride:#a497f0; --c-tour:#ee9a5c; --c-history:#b5b5b5; --c-nature:#8fcc63;
+  --c-event:#f07aa8; --c-food:#e6bb52; --c-other:#a59c8e;
+  --bad:#ef7a6c; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(28px,6.5vw,40px);font-weight:900}
+h2{font-size:21px}
+h3{font-size:17px}
+p{margin:0}
+a{color:var(--c-art)}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:500}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+header{display:flex;flex-direction:column;gap:10px}
+.intro{font-size:14px;color:var(--muted)}
+.intro b{color:var(--ink)}
+.gilt{height:6px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--gold) 0 14px,transparent 14px 18px,var(--c-art) 18px 24px,transparent 24px 28px,var(--c-alt) 28px 32px,transparent 32px 36px)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.panel ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.alert{background:var(--gold-soft);border-radius:8px;padding:12px 14px;font-size:14px}
+h2.sec{margin-bottom:10px}
+
+/* 需提前订 */
+.book{display:flex;flex-direction:column;gap:10px}
+.bk{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;border-top:1px solid var(--line);padding-top:10px}
+.bk:first-of-type{border-top:none;padding-top:0}
+.bk .st{font-size:11px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap;align-self:start;border:1px solid var(--line);color:var(--muted)}
+.bk .st.urgent{background:var(--bad);border-color:var(--bad);color:#fff}
+.bk .st.soon{border-color:var(--gold);color:var(--gold)}
+.bk .body{display:flex;flex-direction:column;gap:2px}
+.bk .dl{font-family:var(--f-data);font-size:13px}
+
+/* 每天 */
+.daynav{display:flex;gap:6px;flex-wrap:wrap}
+.daynav a{font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--ink);background:var(--surface)}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.day-head{display:flex;flex-direction:column;gap:2px}
+.day-head .d{font-family:var(--f-data);font-size:13px;color:var(--gold);font-weight:600}
+.stops{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
+.stop{position:relative;padding:0 0 18px 20px;display:flex;flex-direction:column;gap:3px}
+.stop:last-child{padding-bottom:0}
+.stop::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--cat,var(--muted))}
+.stop.ride::before{border-radius:2px;transform:rotate(45deg)}
+.stop .top{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.stop .t{font-family:var(--f-data);font-weight:600;font-variant-numeric:tabular-nums;font-size:14px}
+.stop .name{font-weight:700}
+.stop .meta{font-size:13px;color:var(--muted)}
+.stop .why{font-size:14px}
+.stop .bk-note{font-size:13px;color:var(--bad)}
+.cat{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--cat);white-space:nowrap}
+.cat i{width:8px;height:8px;border-radius:50%;background:var(--cat);display:inline-block}
+.backup{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+
+/* 列表类 */
+.items{display:flex;flex-direction:column;gap:12px}
+.it{display:flex;flex-direction:column;gap:3px;border-top:1px solid var(--line);padding-top:12px}
+.it:first-child{border-top:none;padding-top:0}
+.it .name{font-weight:700}
+.it .meta{font-size:13px;color:var(--muted)}
+.match{font-size:11px;background:var(--gold-soft);color:var(--gold);border-radius:999px;padding:1px 9px;font-weight:600;white-space:nowrap;margin-left:6px}
+.rating{font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.06em}
+td.num{font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.excluded{display:flex;flex-direction:column;gap:12px}
+.ex{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:4px}
+
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+footer ul{margin:0;padding-left:1.2em}
+.render-error{background:var(--surface);border:1px solid var(--bad);color:var(--bad);border-radius:10px;padding:16px;font-family:var(--f-data);font-size:13px;white-space:pre-wrap}
+
+/* 地图（自绘 SVG，无外部依赖） */
+.toolbar{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap}
+.toolbar .print-btn{font:inherit;font-size:13px;font-weight:600;color:var(--gold);background:var(--gold-soft);border:none;border-radius:999px;padding:8px 18px;cursor:pointer}
+.toolbar .print-btn:hover{filter:brightness(0.94)}
+.toolbar .print-btn:active{filter:brightness(0.88)}
+.lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--surface)}
+.lang-switch button{font:inherit;font-size:13px;font-weight:600;border:none;background:transparent;color:var(--muted);border-radius:999px;padding:6px 14px;cursor:pointer}
+.lang-switch button[aria-pressed="true"]{background:var(--gold-soft);color:var(--gold)}
+.lang-switch button:focus-visible,.toolbar .print-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.mapbox{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.mapbox svg{width:100%;height:auto;display:block}
+.map-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.map-path{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4;opacity:.7}
+.map-dot{stroke:var(--surface);stroke-width:2}
+.map-num{font-family:var(--f-data);font-size:10px;font-weight:600;fill:#fff;pointer-events:none}
+.map-label{font-family:var(--f-body);font-size:11px;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
+.map-compass line,.map-compass polygon{stroke:var(--muted);fill:var(--muted)}
+.map-compass text,.map-scale text{font-size:11px;fill:var(--muted)}
+.map-scale line{stroke:var(--muted);stroke-width:1}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px}
+.legend .cat{white-space:normal}
+
+/* 每天的颜色（总图、时间线） */
+:root{--d1:#c4682a;--d2:#2350a8;--d3:#3f8f5a;--d4:#c2336f;--d5:#a8791f;--d6:#5b4bb7;--d7:#0f8a8a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--d1:#ee9a5c;--d2:#7f9ef0;--d3:#6cc28a;--d4:#f07aa8;--d5:#e0b45a;--d6:#a497f0;--d7:#4fcaca}}
+:root[data-theme="dark"]{--d1:#ee9a5c;--d2:#7f9ef0;--d3:#6cc28a;--d4:#f07aa8;--d5:#e0b45a;--d6:#a497f0;--d7:#4fcaca}
+.day{border-top:4px solid var(--day,var(--line))}
+.day-head .d{color:var(--day,var(--gold))}
+
+/* 总时间线 */
+.tl{display:flex;flex-direction:column;gap:12px}
+.tl-day{border-left:4px solid var(--day);padding-left:12px;display:flex;flex-direction:column;gap:6px}
+.tl-head{display:flex;gap:10px;align-items:baseline}
+.tl-head b{color:var(--day)}
+.tl-row{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.tl-chip{display:inline-flex;align-items:baseline;gap:6px;font-size:13px;text-decoration:none;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--cat);border-radius:6px;padding:2px 8px}
+.tl-chip .t{font-family:var(--f-data);font-size:12px;color:var(--muted)}
+.tl-arrow{color:var(--muted);font-size:12px}
+
+/* 演出状态 */
+.show-st{font-size:11px;border-radius:999px;padding:1px 9px;font-weight:600;white-space:nowrap;margin-left:6px;border:1px solid var(--line);color:var(--muted)}
+.show-st.onsale{border-color:var(--c-market);color:var(--c-market)}
+.show-st.few,.show-st.soon{border-color:var(--gold);color:var(--gold)}
+.show-st.soldout,.show-st.resale{border-color:var(--bad);color:var(--bad)}
+.group{display:flex;flex-direction:column;gap:10px}
+.group + .group{border-top:1px solid var(--line);padding-top:14px}
+.days-wrap{display:flex;flex-direction:column;gap:14px}
+.it .bk-note{color:var(--bad)}
+
+@media print{
+  .toolbar,.daynav{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .day,.panel,.mapbox{break-inside:avoid}
+}
+
+</style>
+</head>
+<body>
+<div id="app" class="wrap"></div>
+<script type="application/json" id="trip-data">
+{
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "lang": "en",
+  "title": {
+    "zh": "伦敦文艺行程",
+    "en": "London culture itinerary"
+  },
+  "version": 1,
+  "city": {
+    "zh": "伦敦",
+    "en": "London"
+  },
+  "country": {
+    "zh": "英国",
+    "en": "United Kingdom"
+  },
+  "dateLabel": {
+    "zh": "2027 年 3 月 26–30 日",
+    "en": "26–30 March 2027"
+  },
+  "heading": {
+    "zh": "伦敦文艺行程：复活节长周末",
+    "en": "London: an Easter long weekend, culture first"
+  },
+  "queriedAt": {
+    "zh": "2026 年 10 月 25 日（距出发约 5 个月，部分展期和演出还没公布）",
+    "en": "25 October 2026 (about 5 months ahead; some exhibition dates and shows aren't announced yet)"
+  },
+  "intro": {
+    "zh": "3 月 26 日（周五）到、30 日（周二）走，只排中间 <b>27、28、29 日三天<\/b>。这三天正好是<b>复活节长周末<\/b>：26 日耶稣受难日和 29 日复活节星期一都是英国公共假日，28 日是复活节星期日，而且当天凌晨<b>夏令时开始，时钟拨快 1 小时<\/b>。主线：现当代艺术（Tate Modern、Tate Britain 刚开幕的 Sonia Boyce 大展）、菜市场和花市、圣保罗教堂穹顶、东区街头艺术、Barbican 粗野主义建筑，最后一天坐泰晤士河公共船去格林尼治。",
+    "en": "Arriving Friday 26 March and leaving Tuesday 30 March, so only the <b>three full days, 27–29 March,<\/b> are planned. They fall on the <b>Easter long weekend<\/b>: Good Friday (26th) and Easter Monday (29th) are UK bank holidays, the 28th is Easter Sunday, and that night <b>the clocks go forward one hour<\/b>. The thread: modern and contemporary art (Tate Modern, and Sonia Boyce's new show at Tate Britain), food and flower markets, the dome of St Paul's, East End street art, Barbican brutalism, and on the last day a public river boat down the Thames to Greenwich."
+  },
+  "verdict": {
+    "items": [
+      {
+        "zh": "<b>Sonia Boyce 回顾展<\/b>（Tate Britain）3 月 26 日刚好开幕：她是 1980 年代英国黑人艺术运动出身的艺术家，是这次最贴你「议题型现当代艺术」口味的展。",
+        "en": "<b>Sonia Boyce retrospective<\/b> (Tate Britain) opens on 26 March: she came out of the 1980s Black British arts movement, and this is the show that best fits your taste for issue-driven contemporary art."
+      },
+      {
+        "zh": "<b>Julio Le Parc：Light. Colour. Action.<\/b>（Tate Modern，展到 5 月 3 日）：光、色彩、会动的装置，还有能按按钮、转动的互动房间，属于你喜欢的「奇怪当代」。",
+        "en": "<b>Julio Le Parc: Light. Colour. Action.<\/b> (Tate Modern, until 3 May): light, colour and moving installations, plus interactive rooms with buttons and spinning parts, the kind of strange contemporary art you enjoy."
+      },
+      {
+        "zh": "<b>圣保罗大教堂<\/b>：内部非常震撼，还能爬上穹顶看泰晤士河和老城，同时满足「震撼的建筑」和「登高望远」。",
+        "en": "<b>St Paul's Cathedral<\/b>: a stunning interior, and you can climb the dome for the Thames and the old City, covering both striking architecture and a view from above."
+      },
+      {
+        "zh": "<b>泰晤士河公共船（Uber Boat）<\/b>：用 contactless 刷卡就能坐，从威斯敏斯特一路坐到格林尼治约 45 分钟，伦敦版的哥本哈根港口轮渡。",
+        "en": "<b>Thames river bus (Uber Boat)<\/b>: tap in with contactless; about 45 minutes from Westminster to Greenwich, London's answer to the Copenhagen harbour buses."
+      },
+      {
+        "zh": "<b>Columbia Road 花市 + 肖迪奇街头艺术 + Barbican<\/b>：一个周日把东区的另类气质和粗野主义建筑串在一起。",
+        "en": "<b>Columbia Road flower market + Shoreditch street art + the Barbican<\/b>: one Sunday linking the East End's alternative streak with brutalist architecture."
+      }
+    ],
+    "alerts": [
+      {
+        "zh": "<b>大英博物馆的贝叶挂毯（Bayeux Tapestry）<\/b>是这几年伦敦最轰动的展，但 <b>3 月 31 日前的票已经全部售罄<\/b>，4 月以后的票 2027 年初才开售。你的日期赶不上，除非之后官方放出退票。",
+        "en": "<b>The Bayeux Tapestry at the British Museum<\/b> is London's blockbuster of the decade, but <b>tickets up to 31 March are sold out<\/b>, and April onwards goes on sale in early 2027. Your dates miss it unless returns are released."
+      },
+      {
+        "zh": "伦敦大部分大型博物馆常设展<b>免费<\/b>，只有特展收费，所以 London Pass 这类城市卡对这个行程不划算，交通直接用 contactless 刷卡（每天自动封顶）即可。",
+        "en": "Most big London museums have <b>free<\/b> permanent collections and charge only for special exhibitions, so a city pass like the London Pass doesn't pay off for this plan; just tap contactless for transport (it caps daily)."
+      },
+      {
+        "zh": "复活节期间 Borough Market 等地的营业时间可能调整，官网只写了「公共假日时间会变」，出发前一周再看一次。",
+        "en": "Opening hours at Borough Market and elsewhere may change over Easter; the website only says bank-holiday hours vary, so check again a week before."
+      }
+    ]
+  },
+  "bookAhead": [
+    {
+      "name": {
+        "zh": "Comedy Store 周末脱口秀 The Best in Stand Up",
+        "en": "Comedy Store weekend stand-up: The Best in Stand Up"
+      },
+      "status": "soon",
+      "deadline": {
+        "zh": "建议提前 2–3 周",
+        "en": "About 2–3 weeks ahead"
+      },
+      "why": {
+        "zh": "周五、周六晚的固定拼盘场，复活节长周末容易满。只限 18 岁以上，带证件。",
+        "en": "The regular Friday and Saturday night line-up show; it fills up over a long weekend. 18+ only, bring ID."
+      },
+      "url": "https://london.thecomedystore.co.uk/whats-on"
+    },
+    {
+      "name": {
+        "zh": "Sonia Boyce（Tate Britain）门票",
+        "en": "Sonia Boyce (Tate Britain) tickets"
+      },
+      "status": "soon",
+      "deadline": {
+        "zh": "开票后尽快（票价还没公布）",
+        "en": "As soon as they go on sale (price not yet announced)"
+      },
+      "why": {
+        "zh": "开幕第一个周末加上复活节假期，限时入场的时段会紧张。",
+        "en": "Opening weekend plus the Easter holiday, so timed-entry slots will be tight."
+      },
+      "url": "https://www.tate.org.uk/whats-on/tate-britain/sonia-boyce"
+    },
+    {
+      "name": {
+        "zh": "Julio Le Parc（Tate Modern）门票",
+        "en": "Julio Le Parc (Tate Modern) tickets"
+      },
+      "status": "soon",
+      "deadline": {
+        "zh": "提前 1–2 周",
+        "en": "1–2 weeks ahead"
+      },
+      "why": {
+        "zh": "展期最后一个多月，周末人多。",
+        "en": "It's the show's last month or so, and weekends are busy."
+      },
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
+    },
+    {
+      "name": {
+        "zh": "圣保罗大教堂参观票",
+        "en": "St Paul's Cathedral sightseeing tickets"
+      },
+      "status": "soon",
+      "deadline": {
+        "zh": "提前 1–2 周，在官网订",
+        "en": "1–2 weeks ahead, on the official site"
+      },
+      "why": {
+        "zh": "成人 £27。<b>复活节前的周六可能因礼拜调整开放时间<\/b>，订票时看官网日历；周日不对游客开放。",
+        "en": "Adults £27. <b>Holy Saturday hours may change for services<\/b>; check the calendar when booking. No sightseeing on Sundays."
+      },
+      "url": "https://www.stpauls.co.uk/book-tickets"
+    },
+    {
+      "name": {
+        "zh": "GuruWalk：City of London 主题导览",
+        "en": "GuruWalk: City of London themed tour"
+      },
+      "status": "ok",
+      "deadline": {
+        "zh": "出发前几天在 GuruWalk 登记",
+        "en": "Register on GuruWalk a few days before"
+      },
+      "why": {
+        "zh": "免费、自愿付小费，登记一下保证有位置。",
+        "en": "Free, pay what you like; registering secures a place."
+      },
+      "url": "https://guruwalk.com/londra"
+    },
+    {
+      "name": {
+        "zh": "贝叶挂毯（大英博物馆）",
+        "en": "Bayeux Tapestry (British Museum)"
+      },
+      "status": "done",
+      "deadline": {
+        "zh": "3 月 31 日前已售罄",
+        "en": "Sold out until 31 March"
+      },
+      "why": {
+        "zh": "只能关注官网退票。",
+        "en": "Only returns on the official site are left."
+      },
+      "url": "https://www.britishmuseum.org/exhibitions/bayeux-tapestry"
+    }
+  ],
+  "skipNote": {
+    "zh": "3 月 26 日（周五）到达、3 月 30 日（周二）离开，这两天白天不排；但 26 日晚上可以去 Comedy Store 看脱口秀（见「演出」部分）。",
+    "en": "Arriving Friday 26 March and leaving Tuesday 30 March, so those daytimes aren't planned; but on the evening of the 26th you could catch stand-up at the Comedy Store (see \"Shows\")."
+  },
+  "days": [
+    {
+      "date": {
+        "zh": "3 月 27 日 周六",
+        "en": "Saturday 27 March"
+      },
+      "theme": {
+        "zh": "市场、帝国的另一面、圣保罗和 Tate Modern",
+        "en": "Markets, the other side of empire, St Paul's and Tate Modern"
+      },
+      "note": {
+        "zh": "全天都在泰晤士河两岸，步行加一段过桥。日落约 18:30，Tate Modern 周六开到 21:00，正好在顶层看日落。",
+        "en": "The whole day stays on both banks of the Thames, on foot with one bridge crossing. Sunset is about 18:30, and Tate Modern is open until 21:00 on Saturdays, perfect for sunset from the top floor."
+      },
+      "stops": [
+        {
+          "time": "09:00",
+          "name": "Borough Market",
+          "cat": "market",
+          "area": {
+            "zh": "London Bridge 南岸",
+            "en": "South bank by London Bridge"
+          },
+          "duration": {
+            "zh": "1.5 小时",
+            "en": "1.5 hours"
+          },
+          "hours": {
+            "zh": "周六 9:00–17:00",
+            "en": "Sat 9:00–17:00"
+          },
+          "why": {
+            "zh": "伦敦最老的食品市场，周六是全场最齐的一天，早点去人少。",
+            "en": "London's oldest food market; Saturday is the fullest day, and it's quieter early."
+          },
+          "url": "https://www.boroughmarket.org.uk/visit-us",
+          "lat": 51.5055,
+          "lng": -0.091
+        },
+        {
+          "time": "11:00",
+          "name": {
+            "zh": "City of London 导览：From Sugar & Slaves to Tea & Opium",
+            "en": "City of London tour: From Sugar & Slaves to Tea & Opium"
+          },
+          "cat": "tour",
+          "area": {
+            "zh": "Monument 旁集合（走过伦敦桥约 10 分钟）",
+            "en": "Meet by the Monument (about 10 minutes' walk across London Bridge)"
+          },
+          "duration": {
+            "zh": "2 小时",
+            "en": "2 hours"
+          },
+          "price": {
+            "zh": "自愿付小费",
+            "en": "Pay what you like"
+          },
+          "why": {
+            "zh": "GuruWalk 4.93 分（2,416 条评价），讲金融城怎么靠糖、奴隶贸易、茶和鸦片发家，就是你喜欢的「Politically Incorrect」那种讲城市另一面的导览。",
+            "en": "GuruWalk 4.93 (2,416 reviews): how the City grew rich on sugar, the slave trade, tea and opium. Exactly the \"Politically Incorrect\" kind of tour that shows a city's other side."
+          },
+          "booking": {
+            "zh": "提前在 GuruWalk 登记；介绍里注明不适合小孩，内容比较沉重。",
+            "en": "Register on GuruWalk in advance; the listing says it's not for children, as the content is heavy."
+          },
+          "url": "https://guruwalk.com/londra",
+          "lat": 51.5101,
+          "lng": -0.0859
+        },
+        {
+          "time": "13:45",
+          "name": {
+            "zh": "圣保罗大教堂 + 穹顶",
+            "en": "St Paul's Cathedral + the dome"
+          },
+          "cat": "arch",
+          "area": "City of London",
+          "duration": {
+            "zh": "1.5–2 小时",
+            "en": "1.5–2 hours"
+          },
+          "hours": {
+            "zh": "参观 8:30 起，最晚 16:00 入场",
+            "en": "Sightseeing from 8:30, last entry 16:00"
+          },
+          "price": "£27",
+          "why": {
+            "zh": "内部是巴洛克穹顶加金色马赛克；爬上穹顶的回廊，看到的是泰晤士河、老城和对岸的 Tate Modern，不是一片没特色的楼。",
+            "en": "A baroque dome and golden mosaics inside; from the dome galleries you look over the Thames, the old City and Tate Modern across the river, not a wall of anonymous towers."
+          },
+          "booking": {
+            "zh": "复活节前的周六，出发前看官网日历确认开放时间。",
+            "en": "Holy Saturday: check the official calendar for opening hours before you go."
+          },
+          "url": "https://www.stpauls.co.uk",
+          "lat": 51.5138,
+          "lng": -0.0984
+        },
+        {
+          "time": "16:00",
+          "name": {
+            "zh": "千禧桥 → Tate Modern：Julio Le Parc 特展 + 常设馆",
+            "en": "Millennium Bridge → Tate Modern: Julio Le Parc + the collection"
+          },
+          "cat": "art",
+          "area": "Bankside",
+          "duration": {
+            "zh": "3 小时",
+            "en": "3 hours"
+          },
+          "hours": {
+            "zh": "周五、周六开到 21:00",
+            "en": "Open until 21:00 on Fridays and Saturdays"
+          },
+          "why": {
+            "zh": "Le Parc 的光、镜面、会动的彩色装置，还有可以按按钮、转动的「游戏室」；常设馆免费，顺便看 Turbine Hall。Monet 特展（展到 6 月 27 日）也在，但偏古典，时间不够就跳过。",
+            "en": "Le Parc's light, mirrors and moving coloured installations, plus a \"games room\" with buttons and spinning parts; the collection is free, and the Turbine Hall is on the way. The Monet show (until 27 June) is also on but more classical; skip it if time is short."
+          },
+          "booking": {
+            "zh": "Le Parc 是收费特展，提前买票。",
+            "en": "Le Parc is a paid exhibition; buy tickets ahead."
+          },
+          "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+          "lat": 51.5076,
+          "lng": -0.0994
+        },
+        {
+          "time": "18:15",
+          "name": {
+            "zh": "Tate Modern 顶层观景层",
+            "en": "Tate Modern viewing level"
+          },
+          "cat": "view",
+          "area": {
+            "zh": "Blavatnik 楼 10 层",
+            "en": "Blavatnik Building, level 10"
+          },
+          "duration": {
+            "zh": "30 分钟",
+            "en": "30 minutes"
+          },
+          "price": {
+            "zh": "免费",
+            "en": "Free"
+          },
+          "why": {
+            "zh": "正对圣保罗穹顶和泰晤士河的日落，就在馆里，不用另外跑。",
+            "en": "Sunset facing the dome of St Paul's and the Thames, right inside the museum."
+          },
+          "lat": 51.5074,
+          "lng": -0.0996
+        },
+        {
+          "time": "21:30",
+          "name": {
+            "zh": "Comedy Store：The Best in Stand Up（可选）",
+            "en": "Comedy Store: The Best in Stand Up (optional)"
+          },
+          "cat": "event",
+          "area": {
+            "zh": "Piccadilly Circus 旁，地铁约 15 分钟",
+            "en": "By Piccadilly Circus, about 15 minutes by Tube"
+          },
+          "duration": {
+            "zh": "约 2 小时",
+            "en": "About 2 hours"
+          },
+          "why": {
+            "zh": "伦敦最有名的脱口秀俱乐部的周末拼盘场，英语，题材很杂。",
+            "en": "The weekend line-up at London's most famous comedy club; in English, all sorts of material."
+          },
+          "booking": {
+            "zh": "场次常见 18:30 / 19:30 / 21:30，以官网为准；18 岁以上，带证件。",
+            "en": "Shows usually at 18:30 / 19:30 / 21:30, check the site; 18+, bring ID."
+          },
+          "url": "https://london.thecomedystore.co.uk/whats-on",
+          "lat": 51.5097,
+          "lng": -0.1322
+        }
+      ],
+      "backup": {
+        "zh": "下雨照常（大部分在室内）。圣保罗如果复活节前不对游客开放，换成 <b>Sky Garden<\/b>（免费，要提前订）或 Leake Street 涂鸦隧道。",
+        "en": "Rain doesn't matter (mostly indoors). If St Paul's isn't open to visitors before Easter, swap in <b>Sky Garden<\/b> (free, book ahead) or the Leake Street graffiti tunnel."
+      }
+    },
+    {
+      "date": {
+        "zh": "3 月 28 日 周日（复活节）",
+        "en": "Sunday 28 March (Easter Sunday)"
+      },
+      "theme": {
+        "zh": "花市、东区街头艺术、Barbican 粗野主义",
+        "en": "Flower market, East End street art, Barbican brutalism"
+      },
+      "note": {
+        "zh": "<b>凌晨 1 点时钟拨快 1 小时<\/b>，早上会觉得早一个钟头。日落约 19:30，傍晚去 Parliament Hill 看整片城市。",
+        "en": "<b>Clocks go forward one hour at 1 a.m.<\/b>, so the morning will feel an hour early. Sunset is about 19:30; end the day on Parliament Hill looking over the whole city."
+      },
+      "stops": [
+        {
+          "time": "08:30",
+          "name": {
+            "zh": "Columbia Road 花市",
+            "en": "Columbia Road Flower Market"
+          },
+          "cat": "market",
+          "area": "Bethnal Green / Hoxton",
+          "duration": {
+            "zh": "1 小时",
+            "en": "1 hour"
+          },
+          "hours": {
+            "zh": "每周日 8:00–14:00",
+            "en": "Every Sunday 8:00–14:00"
+          },
+          "why": {
+            "zh": "整条维多利亚小街都是卖花的摊位，两边是小店和咖啡馆；复活节前后正好是春天的花。",
+            "en": "A whole Victorian street of flower stalls, lined with small shops and cafés; around Easter it's full of spring flowers."
+          },
+          "booking": {
+            "zh": "复活节星期日是否照常开，出发前看 columbiaroadmarket.co.uk。",
+            "en": "Check columbiaroadmarket.co.uk to confirm it runs on Easter Sunday."
+          },
+          "url": "https://en.wikipedia.org/wiki/Columbia_Road_Flower_Market",
+          "lat": 51.5296,
+          "lng": -0.07
+        },
+        {
+          "time": "10:00",
+          "name": {
+            "zh": "肖迪奇和 Brick Lane 街头艺术",
+            "en": "Shoreditch and Brick Lane street art"
+          },
+          "cat": "alt",
+          "area": "Shoreditch / Brick Lane",
+          "duration": {
+            "zh": "2.5 小时",
+            "en": "2.5 hours"
+          },
+          "why": {
+            "zh": "伦敦最密集的涂鸦和街头艺术区，周日 Brick Lane 还有跳蚤市场和各国小吃，是这次最接近柏林 Neurotitan 气质的地方。想听讲解可以改跟 11:00 的街头艺术导览（见下面的导览列表）。",
+            "en": "London's densest graffiti and street-art area; on Sundays Brick Lane also has flea markets and food from everywhere. The closest thing on this trip to Berlin's Neurotitan. For commentary, join the 11:00 street-art tour instead (see the tours list)."
+          },
+          "url": "https://www.guruwalk.com/walks/41419-free-street-art-tour-of-shoreditch",
+          "lat": 51.5216,
+          "lng": -0.0716
+        },
+        {
+          "time": "13:30",
+          "name": "Barbican Estate + The Curve",
+          "cat": "arch",
+          "area": {
+            "zh": "Barbican，从 Brick Lane 步行约 25 分钟",
+            "en": "Barbican, about 25 minutes' walk from Brick Lane"
+          },
+          "duration": {
+            "zh": "2.5 小时",
+            "en": "2.5 hours"
+          },
+          "hours": {
+            "zh": "The Curve 周二到周日 11:00–19:00",
+            "en": "The Curve Tue–Sun 11:00–19:00"
+          },
+          "why": {
+            "zh": "粗野主义住宅区、水池和空中步道，整个建筑群就是展品；The Curve 3–5 月是印度摄影师 Dayanita Singh 的「可移动博物馆」装置（免费）。温室（Conservatory）开放日不固定，碰上了一定进去。",
+            "en": "Brutalist housing, lakes and high walkways: the whole estate is the exhibit. The Curve hosts Indian photographer Dayanita Singh's \"museum\" installation in spring (free). The Conservatory opens on irregular days; go in if you're lucky."
+          },
+          "booking": {
+            "zh": "Dayanita Singh 展还没公布确切开幕日；温室开放日以 Barbican 官网为准。",
+            "en": "The Dayanita Singh show's exact opening date isn't announced yet; check Conservatory days on the Barbican site."
+          },
+          "url": "https://barbican.org.uk/visitor-information/opening-hours",
+          "lat": 51.5203,
+          "lng": -0.0937
+        },
+        {
+          "time": "18:45",
+          "name": {
+            "zh": "Parliament Hill（汉普斯特德荒野）",
+            "en": "Parliament Hill (Hampstead Heath)"
+          },
+          "cat": "view",
+          "area": {
+            "zh": "Overground 到 Gospel Oak，约 35 分钟",
+            "en": "Overground to Gospel Oak, about 35 minutes"
+          },
+          "duration": {
+            "zh": "1.5 小时",
+            "en": "1.5 hours"
+          },
+          "price": {
+            "zh": "免费",
+            "en": "Free"
+          },
+          "why": {
+            "zh": "城里的小山丘，日落时看整条天际线，圣保罗穹顶在受保护的视线走廊里；山下就是荒野和池塘，很像你喜欢的「城里爬山」。",
+            "en": "A hill in the city with the whole skyline at sunset, St Paul's dome sitting in a protected view corridor; below is heath and ponds, very much your kind of \"climb a hill in town\"."
+          },
+          "lat": 51.5596,
+          "lng": -0.1528
+        }
+      ],
+      "backup": {
+        "zh": "下雨：Barbican 待久一点，或者去 <b>V&A 的 Punk to Pop<\/b>（3 月 13 日开幕，讲 70 年代亚文化和朋克，很合另类口味）。",
+        "en": "If it rains: stay longer at the Barbican, or go to <b>Punk to Pop at the V&A<\/b> (opens 13 March; 1970s subcultures and punk, right up the alternative alley)."
+      }
+    },
+    {
+      "date": {
+        "zh": "3 月 29 日 周一（复活节星期一，公共假日）",
+        "en": "Monday 29 March (Easter Monday, bank holiday)"
+      },
+      "theme": {
+        "zh": "Sonia Boyce、坐船顺泰晤士河去格林尼治",
+        "en": "Sonia Boyce, then down the Thames by boat to Greenwich"
+      },
+      "note": {
+        "zh": "Borough Market 周一不开，今天不排市场。日落约 19:30，最后在格林尼治公园山顶看日落。",
+        "en": "Borough Market is closed on Mondays, so no market today. Sunset is about 19:30; finish on the hill in Greenwich Park."
+      },
+      "stops": [
+        {
+          "time": "10:00",
+          "name": {
+            "zh": "Tate Britain：Sonia Boyce 回顾展",
+            "en": "Tate Britain: Sonia Boyce retrospective"
+          },
+          "cat": "art",
+          "area": "Pimlico / Millbank",
+          "duration": {
+            "zh": "2 小时",
+            "en": "2 hours"
+          },
+          "hours": {
+            "zh": "每天 10:00–18:00",
+            "en": "Daily 10:00–18:00"
+          },
+          "why": {
+            "zh": "她 40 年创作的第一次大型回顾，装置、拼贴、影像、和公众一起做的 Devotional 档案；1980 年代英国黑人艺术运动出身，议题型，和你在 Louisiana 喜欢的那类展最接近。",
+            "en": "The first major survey of her 40-year practice: installation, collage, film, and the Devotional archive made with the public. Issue-driven and rooted in the 1980s Black British arts movement, it's the closest match to the shows you loved at Louisiana."
+          },
+          "booking": {
+            "zh": "票价还没公布，开票后提前买。",
+            "en": "Price not yet announced; book once tickets are out."
+          },
+          "url": "https://www.tate.org.uk/whats-on/tate-britain/sonia-boyce",
+          "lat": 51.4911,
+          "lng": -0.1278
+        },
+        {
+          "time": "12:30",
+          "name": {
+            "zh": "Uber Boat：Westminster Pier → Greenwich",
+            "en": "Uber Boat: Westminster Pier → Greenwich"
+          },
+          "cat": "ride",
+          "area": {
+            "zh": "泰晤士河，约 45 分钟",
+            "en": "On the Thames, about 45 minutes"
+          },
+          "price": {
+            "zh": "contactless 刷卡",
+            "en": "Contactless"
+          },
+          "why": {
+            "zh": "伦敦的公共河上巴士，一路经过国会大厦、圣保罗、伦敦塔桥、金丝雀码头，再到格林尼治，当交通也当观光。",
+            "en": "London's public river bus, past Parliament, St Paul's, Tower Bridge and Canary Wharf to Greenwich: transport and sightseeing in one."
+          },
+          "url": "https://www.rmg.co.uk/plan-your-visit/getting-here/river",
+          "lat": 51.5016,
+          "lng": -0.1236
+        },
+        {
+          "time": "14:00",
+          "name": {
+            "zh": "Painted Hall（旧皇家海军学院）",
+            "en": "Painted Hall (Old Royal Naval College)"
+          },
+          "cat": "arch",
+          "area": "Greenwich",
+          "duration": {
+            "zh": "1 小时",
+            "en": "1 hour"
+          },
+          "hours": {
+            "zh": "每天 10:00–17:00",
+            "en": "Daily 10:00–17:00"
+          },
+          "why": {
+            "zh": "整面墙和天花板都是巴洛克壁画的大厅，被称作「英国的西斯廷礼拜堂」，属于你说的「建筑本身震撼」那一类。有免费讲解（11:45、12:45、14:45、15:45）。",
+            "en": "A hall with walls and ceiling covered in baroque painting, called \"Britain's Sistine Chapel\"; firmly in your \"the building itself is the show\" category. Free talks at 11:45, 12:45, 14:45 and 15:45."
+          },
+          "booking": {
+            "zh": "偶尔因私人活动临时关闭，出发前看官网关闭公告。",
+            "en": "Occasionally closes at short notice for private events; check the closures notice before you go."
+          },
+          "url": "https://www.ornc.org/visit/",
+          "lat": 51.4827,
+          "lng": -0.006
+        },
+        {
+          "time": "15:30",
+          "name": {
+            "zh": "格林尼治街区和 Greenwich Market",
+            "en": "Greenwich streets and Greenwich Market"
+          },
+          "cat": "food",
+          "area": {
+            "zh": "Greenwich 镇中心",
+            "en": "Greenwich town centre"
+          },
+          "duration": {
+            "zh": "1.5 小时",
+            "en": "1.5 hours"
+          },
+          "why": {
+            "zh": "带顶棚的老市场，有手作摊位和小吃，周围是乔治时代的老街。",
+            "en": "A covered historic market with craft stalls and street food, surrounded by Georgian streets."
+          },
+          "lat": 51.4816,
+          "lng": -0.0092
+        },
+        {
+          "time": "18:45",
+          "name": {
+            "zh": "格林尼治公园山顶（皇家天文台旁）",
+            "en": "Top of Greenwich Park (by the Royal Observatory)"
+          },
+          "cat": "view",
+          "area": "Greenwich Park",
+          "duration": {
+            "zh": "1 小时",
+            "en": "1 hour"
+          },
+          "price": {
+            "zh": "免费",
+            "en": "Free"
+          },
+          "why": {
+            "zh": "脚下是旧海军学院的双穹顶和泰晤士河，对岸是金丝雀码头，是伦敦最经典的日落观景点之一。",
+            "en": "Below you are the twin domes of the Old Royal Naval College and the Thames, with Canary Wharf across the water; one of London's classic sunset views."
+          },
+          "lat": 51.4774,
+          "lng": -0.0015
+        }
+      ],
+      "backup": {
+        "zh": "下雨：Painted Hall 之后去旁边的国家海事博物馆（免费）。今晚是这个月最后一个周一，Comedy Store 有 <b>'King Gong 开放麦<\/b>（观众可以把演员「敲」下台）。",
+        "en": "If it rains: after the Painted Hall, go next door to the National Maritime Museum (free). Tonight is the last Monday of the month, so the Comedy Store runs its <b>'King Gong open mic<\/b> (the audience can gong acts off stage)."
+      }
+    }
+  ],
+  "exhibitions": [
+    {
+      "title": "Sonia Boyce",
+      "venue": "Tate Britain",
+      "until": {
+        "zh": "2027 年 8 月 22 日（3 月 26 日开幕）",
+        "en": "22 August 2027 (opens 26 March)"
+      },
+      "match": {
+        "zh": "议题型",
+        "en": "Issue-driven"
+      },
+      "why": {
+        "zh": "英国黑人艺术运动出身的艺术家，第一次大型回顾。",
+        "en": "First major retrospective of an artist from the Black British arts movement."
+      },
+      "url": "https://www.tate.org.uk/whats-on/tate-britain/sonia-boyce"
+    },
+    {
+      "title": "Julio Le Parc: Light. Colour. Action.",
+      "venue": "Tate Modern",
+      "until": {
+        "zh": "2027 年 5 月 3 日",
+        "en": "3 May 2027"
+      },
+      "match": {
+        "zh": "奇怪当代",
+        "en": "Strange contemporary"
+      },
+      "why": {
+        "zh": "60 多件光、色彩、动态和互动作品，展线像迷宫。",
+        "en": "Over 60 works of light, colour, motion and interaction, laid out like a maze."
+      },
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
+    },
+    {
+      "title": "Punk to Pop",
+      "venue": "V&A South Kensington",
+      "until": {
+        "zh": "2028 年 1 月 2 日",
+        "en": "2 January 2028"
+      },
+      "match": {
+        "zh": "亚文化",
+        "en": "Subculture"
+      },
+      "why": {
+        "zh": "70 年代亚文化怎么变成朋克，又怎么影响音乐、艺术和时装。",
+        "en": "How 1970s subcultures became punk, and how punk shaped music, art and fashion."
+      },
+      "url": "https://www.timeout.com/london/news/v-and-a-museums-london-programme-2027-071626"
+    },
+    {
+      "title": "Dayanita Singh",
+      "venue": {
+        "zh": "Barbican，The Curve",
+        "en": "Barbican, The Curve"
+      },
+      "until": {
+        "zh": "2027 年 5 月（开幕日待公布）",
+        "en": "May 2027 (opening date TBC)"
+      },
+      "match": {
+        "zh": "当代摄影",
+        "en": "Contemporary photography"
+      },
+      "why": {
+        "zh": "柚木做的「可移动博物馆」装置，讲印度古典音乐对她 50 年创作的影响。",
+        "en": "A teak \"mobile museum\" installation on how Indian classical music shaped her 50 years of work."
+      },
+      "url": "https://www.shortlist.com/entertainment/the-barbican-has-unveiled-its-2027-programme-and-its-an-artsy-tour-de-force"
+    },
+    {
+      "title": "Monet: Painting Time",
+      "venue": "Tate Modern",
+      "until": {
+        "zh": "2027 年 6 月 27 日",
+        "en": "27 June 2027"
+      },
+      "why": {
+        "zh": "Tate Modern 第一次办莫奈专题。偏古典，不在主线，时间多再看。",
+        "en": "Tate Modern's first Monet show. More classical and off the main thread; see it if you have time."
+      },
+      "url": "https://www.tate.org.uk/press/press-releases/tate-announces-2027-exhibition-programme"
+    }
+  ],
+  "showsNote": {
+    "zh": "查了 Ticketmaster、The O2 日程、Songkick、British Comedy Guide 巡演表、Comedy Store 和 Eventim Apollo。<b>这几天没有麦莉·赛勒斯那种量级的流行巨星演出<\/b>，O2 这几天是电子 DJ（26 日 Sub Focus、27 日 Sonny Fodera）和金属乐队（28 日 Ice Nine Kills）。<b>差几天的<\/b>：Olivia Rodrigo 4 月 5 日起在 O2 连开多场，比你离开晚一周。Trevor Noah、黄阿丽、Mario Adrion 都没查到 2027 年 3 月的伦敦场次，演员的巡演通常提前几个月才公布，出发前一个月再查一次。",
+    "en": "Checked Ticketmaster, The O2's calendar, Songkick, the British Comedy Guide tour list, the Comedy Store and Eventim Apollo. <b>No Miley Cyrus-scale pop stars play these dates<\/b>; The O2 has electronic DJs (Sub Focus on the 26th, Sonny Fodera on the 27th) and a metal band (Ice Nine Kills on the 28th). <b>Just missed<\/b>: Olivia Rodrigo plays several nights at The O2 from 5 April, a week after you leave. No March 2027 London dates found for Trevor Noah, Ali Wong or Mario Adrion; comedy tours are often announced only a few months out, so check again a month before."
+  },
+  "shows": [
+    {
+      "name": {
+        "zh": "Comedy Store：The Best in Stand Up",
+        "en": "Comedy Store: The Best in Stand Up"
+      },
+      "kind": "comedy",
+      "date": {
+        "zh": "每周四、五、六晚（3 月 26、27 日都有）",
+        "en": "Every Thu, Fri and Sat night (on 26 and 27 March)"
+      },
+      "venue": {
+        "zh": "The Comedy Store，Piccadilly",
+        "en": "The Comedy Store, Piccadilly"
+      },
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "why": {
+        "zh": "伦敦最老牌的脱口秀俱乐部，周末拼盘场，常有电视上的熟面孔。",
+        "en": "London's best-known comedy club; the weekend line-up often has faces from TV."
+      },
+      "url": "https://london.thecomedystore.co.uk/whats-on"
+    },
+    {
+      "name": {
+        "zh": "Comedy Store Players（即兴喜剧）",
+        "en": "Comedy Store Players (improv)"
+      },
+      "kind": "comedy",
+      "date": {
+        "zh": "每周日 19:30 左右（3 月 28 日）",
+        "en": "Every Sunday around 19:30 (28 March)"
+      },
+      "venue": "The Comedy Store",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "why": {
+        "zh": "老牌即兴喜剧团，现场根据观众点子即兴演。",
+        "en": "A long-running improv troupe making scenes from audience suggestions."
+      },
+      "url": "https://london.thecomedystore.co.uk/whats-on"
+    },
+    {
+      "name": {
+        "zh": "'King Gong 开放麦",
+        "en": "'King Gong open mic"
+      },
+      "kind": "comedy",
+      "date": {
+        "zh": "每月最后一个周一 19:30 左右（3 月 29 日）",
+        "en": "Last Monday of the month, around 19:30 (29 March)"
+      },
+      "venue": "The Comedy Store",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "price": {
+        "zh": "£12 起",
+        "en": "From £12"
+      },
+      "why": {
+        "zh": "新人开放麦，观众可以把不好笑的演员「敲锣」赶下台，很热闹。",
+        "en": "An open mic for new acts where the audience can gong unfunny comics off stage; rowdy fun."
+      },
+      "url": "https://london.thecomedystore.co.uk/whats-on"
+    }
+  ],
+  "media": [
+    {
+      "kind": "film",
+      "title": {
+        "zh": "骄傲",
+        "en": "Pride"
+      },
+      "original": "Pride",
+      "year": "2014",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "tag": {
+        "zh": "政治",
+        "en": "Politics"
+      },
+      "why": {
+        "zh": "1984 年伦敦的同性恋活动者跑去支援威尔士罢工矿工，真实事件，又好笑又感人；性别和政治议题都有。",
+        "en": "In 1984 London gay and lesbian activists back striking Welsh miners. A true story, funny and moving, touching both gender and politics."
+      }
+    },
+    {
+      "kind": "film",
+      "title": {
+        "zh": "妇女参政论者",
+        "en": "Suffragette"
+      },
+      "original": "Suffragette",
+      "year": "2015",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "tag": {
+        "zh": "性别议题",
+        "en": "Gender"
+      },
+      "why": {
+        "zh": "20 世纪初伦敦洗衣女工卷入女性选举权运动。",
+        "en": "London laundry workers drawn into the fight for women's votes in the early 20th century."
+      }
+    },
+    {
+      "kind": "film",
+      "title": {
+        "zh": "帕丁顿熊 2",
+        "en": "Paddington 2"
+      },
+      "original": "Paddington 2",
+      "year": "2017",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "tag": {
+        "zh": "有趣",
+        "en": "Fun"
+      },
+      "why": {
+        "zh": "轻松好笑的伦敦，诺丁山、移民社区和城市的善意。",
+        "en": "A light, funny London: Notting Hill, immigrant communities and a kind city."
+      }
+    },
+    {
+      "kind": "series",
+      "title": {
+        "zh": "小斧头",
+        "en": "Small Axe"
+      },
+      "original": "Small Axe",
+      "year": "2020",
+      "creator": "Steve McQueen",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "tag": {
+        "zh": "种族",
+        "en": "Race"
+      },
+      "why": {
+        "zh": "五部电影组成的选集，讲 1960–80 年代伦敦西印度群岛移民社区和种族歧视；正好是 Sonia Boyce 成长的那个伦敦。",
+        "en": "An anthology of five films about London's West Indian community and racism from the 1960s to the 80s; the very London Sonia Boyce grew up in."
+      }
+    },
+    {
+      "kind": "doc",
+      "title": {
+        "zh": "伦敦：现代巴比伦",
+        "en": "London: The Modern Babylon"
+      },
+      "original": "London: The Modern Babylon",
+      "year": "2012",
+      "creator": "Julien Temple",
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "tag": {
+        "zh": "现代",
+        "en": "Modern"
+      },
+      "why": {
+        "zh": "用档案影像拼出 20 世纪伦敦：移民、朋克、骚乱、战争，节奏很快。看完再去 V&A 的 Punk to Pop 更有感觉。",
+        "en": "Twentieth-century London cut together from archive footage: immigration, punk, riots, war, at a fast pace. Watch it before the V&A's Punk to Pop."
+      }
+    },
+    {
+      "kind": "book",
+      "title": {
+        "zh": "伦敦传",
+        "en": "London: The Biography"
+      },
+      "original": "London: The Biography",
+      "creator": "Peter Ackroyd",
+      "year": "2000",
+      "lang": {
+        "zh": "英文原版，有中文译本",
+        "en": "English original; Chinese translation available"
+      },
+      "tag": {
+        "zh": "古代到现代",
+        "en": "Ancient to modern"
+      },
+      "why": {
+        "zh": "按主题而不是按年代写的伦敦史，写街道、气味、监狱、河流，适合挑章节读。",
+        "en": "A history of London organised by theme rather than date: streets, smells, prisons, the river. Good to dip into by chapter."
+      }
+    },
+    {
+      "kind": "book",
+      "title": {
+        "zh": "白牙",
+        "en": "White Teeth"
+      },
+      "original": "White Teeth",
+      "creator": "Zadie Smith",
+      "year": "2000",
+      "lang": {
+        "zh": "英文原版，有中文译本",
+        "en": "English original; Chinese translation available"
+      },
+      "tag": {
+        "zh": "多元文化",
+        "en": "Multicultural"
+      },
+      "why": {
+        "zh": "伦敦北部三个移民家庭的几十年，又好笑又尖锐，写身份和文化差异。",
+        "en": "Decades in the lives of three immigrant families in north London; funny and sharp on identity and cultural difference."
+      }
+    }
+  ],
+  "mediaNote": {
+    "zh": "都是英语原版，书都有中文译本。你看过、喜欢的告诉我，之后会加进 skill 里去重。",
+    "en": "All in English; the books all have Chinese translations. Tell me what you've seen and liked, and I'll add it to the skill so it isn't recommended again."
+  },
+  "tours": [
+    {
+      "name": "City of London: From Sugar & Slaves to Tea & Opium",
+      "platform": "GuruWalk",
+      "rating": "4.93",
+      "count": "2,416",
+      "schedule": {
+        "zh": "11:00、14:00 等",
+        "en": "11:00, 14:00 and more"
+      },
+      "duration": {
+        "zh": "2 小时",
+        "en": "2 hours"
+      },
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "why": {
+        "zh": "已排进第 1 天。讲大英帝国贸易的黑暗面，Monument 旁集合。",
+        "en": "Already in day 1. The dark side of British imperial trade; meets by the Monument."
+      },
+      "url": "https://guruwalk.com/londra"
+    },
+    {
+      "name": "The Iconic Street Art Tour: Shoreditch, Banksy and Hidden Gems",
+      "platform": "GuruWalk",
+      "rating": "4.87",
+      "count": "1,454",
+      "schedule": {
+        "zh": "11:00、14:00",
+        "en": "11:00, 14:00"
+      },
+      "duration": {
+        "zh": "2 小时",
+        "en": "2 hours"
+      },
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "why": {
+        "zh": "第 2 天可以替换自己逛；Shoreditch High Street 站外集合，导游拿红伞。周日是否有场次要看 GuruWalk 日历。",
+        "en": "Can replace the self-guided walk on day 2; meets outside Shoreditch High Street station, guide with a red umbrella. Check the GuruWalk calendar for Sunday slots."
+      },
+      "url": "https://www.guruwalk.com/walks/41419-free-street-art-tour-of-shoreditch"
+    },
+    {
+      "name": "London - An Essential History: Art, Architecture, Politics and Monarchy",
+      "platform": "GuruWalk",
+      "rating": "4.95",
+      "count": "690",
+      "schedule": {
+        "zh": "11:30、14:30",
+        "en": "11:30, 14:30"
+      },
+      "duration": {
+        "zh": "2 小时",
+        "en": "2 hours"
+      },
+      "lang": {
+        "zh": "英语",
+        "en": "English"
+      },
+      "why": {
+        "zh": "伦敦这次评分最高的老城导览，政治和建筑都讲。",
+        "en": "The highest-rated old-town tour this time, covering politics and architecture."
+      },
+      "url": "https://guruwalk.com/londra"
+    }
+  ],
+  "toursNote": {
+    "zh": "门槛：GuruWalk 评分 ≥ 4.7、评价 ≥ 300 条；主题型优先。",
+    "en": "Threshold: GuruWalk rating ≥ 4.7 with ≥ 300 reviews; themed tours preferred."
+  },
+  "pool": [
+    {
+      "name": {
+        "zh": "Richmond Park 鹿园",
+        "en": "Richmond Park deer park"
+      },
+      "cat": "nature",
+      "area": {
+        "zh": "Richmond，火车约 25 分钟",
+        "en": "Richmond, about 25 minutes by train"
+      },
+      "why": {
+        "zh": "伦敦最大的皇家公园，600 多头野鹿自由走动，补上你在哥本哈根没去成的鹿园。半天。",
+        "en": "London's largest royal park, with 600-plus free-roaming deer; makes up for the Copenhagen deer park you missed. Half a day."
+      },
+      "lat": 51.4428,
+      "lng": -0.2752
+    },
+    {
+      "name": {
+        "zh": "国会大厦导览",
+        "en": "Houses of Parliament tour"
+      },
+      "cat": "arch",
+      "area": "Westminster",
+      "price": {
+        "zh": "£26 起",
+        "en": "From £26"
+      },
+      "why": {
+        "zh": "你很喜欢布达佩斯国会，这里的上下议院内部也非常华丽。周六有导览，议会休会期间周一到周六都有，要提前在官网订。",
+        "en": "You loved Budapest's parliament; the Commons and Lords interiors here are just as lavish. Tours run on Saturdays, and Monday to Saturday during recess; book ahead on the official site."
+      },
+      "url": "https://www.visitlondon.com/things-to-do/place/401836-houses-of-parliament",
+      "lat": 51.4995,
+      "lng": -0.1248
+    },
+    {
+      "name": "Leighton House",
+      "cat": "arch",
+      "area": "Holland Park",
+      "price": "£9",
+      "why": {
+        "zh": "维多利亚画家的故居，Arab Hall 用伊斯兰瓷砖和金色马赛克铺满，很装饰。",
+        "en": "A Victorian painter's home whose Arab Hall is covered in Islamic tiles and gold mosaic; highly decorative."
+      },
+      "url": "https://www.visitlondon.com/things-to-do/place/121581-leighton-house-museum",
+      "lat": 51.5016,
+      "lng": -0.2034
+    },
+    {
+      "name": {
+        "zh": "V&A：Punk to Pop",
+        "en": "V&A: Punk to Pop"
+      },
+      "cat": "art",
+      "area": "South Kensington",
+      "why": {
+        "zh": "70 年代亚文化和朋克，3 月 13 日开幕。V&A 主楼本身也很华丽。",
+        "en": "1970s subcultures and punk, opening 13 March. The V&A building itself is lavish too."
+      },
+      "lat": 51.4966,
+      "lng": -0.1722
+    },
+    {
+      "name": "Sky Garden",
+      "cat": "view",
+      "area": "City of London",
+      "price": {
+        "zh": "免费",
+        "en": "Free"
+      },
+      "why": {
+        "zh": "带室内花园的观景层，能看到伦敦塔桥和泰晤士河；但周围都是金融城高楼，所以没排进主线。要提前在官网订免费票。",
+        "en": "A viewing level with an indoor garden, looking at Tower Bridge and the Thames; but it's surrounded by City towers, so it's not on the main route. Book free tickets ahead."
+      },
+      "lat": 51.5111,
+      "lng": -0.0835
+    },
+    {
+      "name": {
+        "zh": "Regent's Canal：King's Cross → Camden",
+        "en": "Regent's Canal: King's Cross → Camden"
+      },
+      "cat": "alt",
+      "area": "King's Cross",
+      "why": {
+        "zh": "运河边的旧仓库改造区（Coal Drops Yard）和船屋，一路走到 Camden 的另类市场。",
+        "en": "Converted canal-side warehouses (Coal Drops Yard) and narrowboats, walking all the way to Camden's alternative markets."
+      },
+      "lat": 51.5355,
+      "lng": -0.1258
+    },
+    {
+      "name": {
+        "zh": "帝国战争博物馆：大屠杀展厅",
+        "en": "Imperial War Museum: The Holocaust Galleries"
+      },
+      "cat": "history",
+      "area": "Lambeth",
+      "price": {
+        "zh": "免费",
+        "en": "Free"
+      },
+      "why": {
+        "zh": "沉重历史，展陈做得很好，离 Tate Britain 不远。",
+        "en": "Difficult history, very well presented, not far from Tate Britain."
+      },
+      "lat": 51.4958,
+      "lng": -0.1086
+    }
+  ],
+  "beyond": [
+    {
+      "name": {
+        "zh": "巨石阵 Stonehenge",
+        "en": "Stonehenge"
+      },
+      "cat": "history",
+      "distance": {
+        "zh": "火车到 Salisbury 约 1.5 小时，再转专线巴士",
+        "en": "About 1.5 hours by train to Salisbury, then a dedicated bus"
+      },
+      "why": {
+        "zh": "超出 1 小时圈，但非常有名，要整整一天；三天都排满了，只放在这里备选。",
+        "en": "Outside the 1-hour radius but very famous; it takes a full day, and all three days are full, so it's here as an alternative."
+      },
+      "booking": {
+        "zh": "English Heritage 官网分时段订票，复活节假期人多。",
+        "en": "Timed tickets on the English Heritage site; busy over Easter."
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "name": {
+        "zh": "大英博物馆：贝叶挂毯",
+        "en": "British Museum: the Bayeux Tapestry"
+      },
+      "why": {
+        "zh": "3 月 31 日前的票已经售罄；馆内其他藏品以古代文物为主，不在你的偏好里。",
+        "en": "Tickets before 31 March are sold out, and the rest of the collection is mostly antiquities, outside your interests."
+      }
+    },
+    {
+      "name": {
+        "zh": "国家美术馆（含 Van Eyck 特展）",
+        "en": "National Gallery (including the Van Eyck show)"
+      },
+      "why": {
+        "zh": "以古典大师油画为主。",
+        "en": "Mostly Old Master paintings."
+      }
+    },
+    {
+      "name": {
+        "zh": "伦敦眼、The Shard",
+        "en": "London Eye, The Shard"
+      },
+      "why": {
+        "zh": "价格高，看到的大部分是新楼。",
+        "en": "Expensive, and the view is mostly new towers."
+      }
+    },
+    {
+      "name": {
+        "zh": "白金汉宫、牛津街",
+        "en": "Buckingham Palace, Oxford Street"
+      },
+      "why": {
+        "zh": "打卡和购物，不合口味。",
+        "en": "Photo stops and shopping, not your thing."
+      }
+    }
+  ],
+  "footer": {
+    "paragraphs": [
+      {
+        "zh": "排程假设：住市中心、全程公共交通（contactless 刷卡，每天自动封顶）；日落时间按 3 月底估算（27 日约 18:30，夏令时后约 19:30）。",
+        "en": "Planning assumptions: staying centrally, public transport throughout (contactless, daily cap); sunset times estimated for late March (about 18:30 on the 27th, about 19:30 after the clocks change)."
+      },
+      {
+        "zh": "已核对：Tate 两个特展的展期、Borough Market 周六营业时间、圣保罗参观时间和票价、Painted Hall 开放时间、贝叶挂毯售票情况、GuruWalk 评分。还没公布或要出发前再查：Sonia Boyce 票价、Dayanita Singh 开幕日、Barbican 温室开放日、复活节期间的市场时间、Comedy Store 3 月场次。",
+        "en": "Verified: dates of both Tate shows, Borough Market Saturday hours, St Paul's hours and price, Painted Hall hours, Bayeux Tapestry ticket status, GuruWalk ratings. Not yet announced or to recheck before departure: Sonia Boyce ticket price, Dayanita Singh opening date, Barbican Conservatory days, Easter market hours, Comedy Store March listings."
+      },
+      {
+        "zh": "官方旅游网站 visitlondon.com 的活动日历还没有 2027 年 3 月的内容，演出部分改查票务平台和场馆日程。",
+        "en": "The official visitlondon.com events calendar has no March 2027 listings yet, so shows were checked on ticketing platforms and venue calendars instead."
+      }
+    ],
+    "links": [
+      [
+        {
+          "text": "Visit London",
+          "url": "https://www.visitlondon.com"
+        },
+        {
+          "text": {
+            "zh": "Tate 2027 展览",
+            "en": "Tate 2027 exhibitions"
+          },
+          "url": "https://www.tate.org.uk/press/press-releases/tate-announces-2027-exhibition-programme"
+        },
+        {
+          "text": "V&A 2027",
+          "url": "https://www.timeout.com/london/news/v-and-a-museums-london-programme-2027-071626"
+        }
+      ],
+      [
+        {
+          "text": {
+            "zh": "The O2 日程",
+            "en": "The O2 calendar"
+          },
+          "url": "https://www.theo2.co.uk/events/venue/the-o2-arena/64"
+        },
+        {
+          "text": {
+            "zh": "British Comedy Guide 巡演",
+            "en": "British Comedy Guide tours"
+          },
+          "url": "https://www.comedy.co.uk/live/tours/"
+        },
+        {
+          "text": {
+            "zh": "GuruWalk 伦敦",
+            "en": "GuruWalk London"
+          },
+          "url": "https://guruwalk.com/londra"
+        }
+      ]
+    ]
+  }
+}
+</script>
+<script>
+/* europe-city-culture-planner 城市行程页渲染器 v2 · city itinerary page renderer
+ * 读取 <script type="application/json" id="trip-data"> 的 JSON，渲染成行程页：
+ * 行程总图 + 总时间线、每天的路线图、展览、演出、影视书、free walking tour 等。
+ * 双语：任何文本字段都可以写成 {"zh": "…", "en": "…"}，页面右上角可切换中文 / English。
+ * 标了「html」的字段只保留 <b> <i> <a> <br> 等行内标签，其余按纯文本处理。
+ */
+(function () {
+  "use strict";
+  var app = document.getElementById("app") || document.body.appendChild(document.createElement("div"));
+
+  var DICT = {
+    zh: {
+      version: function (n) { return "第 " + n + " 版"; },
+      daysPlanned: function (n) { return "排了 " + n + " 天"; },
+      heading: function (c) { return c + " 文艺行程"; },
+      cityCountry: function (c, k) { return c + (k ? "，" + k : ""); },
+      verdict: "这次最值得的", bookAhead: "需要提前预订",
+      st_urgent: "马上订", st_soon: "尽快订", st_ok: "到时再订", st_done: "已订",
+      overview: "行程总图和时间线",
+      overviewNote: "编号是「第几天-第几站」，同一天的点用同色虚线按时间连起来。示意位置图，不是精确地理底图。",
+      dayN: function (n) { return "第 " + n + " 天"; },
+      days: "每天的安排", backup: "下雨 / 关门的备选：",
+      exhibitions: "这几天在展", until: function (s) { return "展到 " + s; },
+      events: "这几天的活动",
+      shows: "这几天的大型演出和脱口秀",
+      k_concert: "演唱会", k_comedy: "脱口秀", k_theatre: "剧场 / 歌剧", k_festival: "音乐节", k_other: "演出",
+      s_onsale: "在售", s_few: "余票少", s_soldout: "已售罄", s_resale: "只有转售票", s_soon: "即将开售",
+      media: "出发前可以看的电影、书和纪录片",
+      m_film: "电影", m_doc: "纪录片", m_series: "剧集", m_book: "书", m_podcast: "播客", m_other: "其他",
+      tours: "高分 free walking tour", thTour: "导览", thRating: "评分（人数）", thWhen: "时间", thWhy: "为什么选",
+      pool: "没排进去，但也合你口味",
+      beyond: "1 小时圈外，但太有名不能漏",
+      skipped: "有意没排的热门景点",
+      queried: function (s) { return "查询时间：" + s + "。开放时间、票价和展期以官网为准，出发前再核对一次。"; },
+      mapFail: "地图渲染失败：",
+      c_market: "菜市场", c_arch: "建筑", c_art: "现当代艺术", c_artclassic: "古典艺术", c_alt: "另类街区",
+      c_view: "登高望远", c_ride: "交通体验", c_tour: "城市导览", c_history: "沉重历史", c_nature: "自然 / 海岛",
+      c_event: "活动", c_food: "吃", c_other: "其他",
+      print: "导出 / 打印 PDF",
+      noData: function (id) { return "页面里没有找到 id=\"" + id + "\" 的 JSON。"; },
+      renderFail: "行程页渲染失败："
+    },
+    en: {
+      version: function (n) { return "v" + n; },
+      daysPlanned: function (n) { return n + (n === 1 ? " day planned" : " days planned"); },
+      heading: function (c) { return c + ": a culture-first itinerary"; },
+      cityCountry: function (c, k) { return c + (k ? ", " + k : ""); },
+      verdict: "Highlights of this trip", bookAhead: "Book ahead",
+      st_urgent: "Book now", st_soon: "Book soon", st_ok: "Book later", st_done: "Booked",
+      overview: "Trip map and timeline",
+      overviewNote: "Numbers are day-stop. Each day's stops are joined in time order by a dashed line in that day's colour. Schematic map, not to geographic detail.",
+      dayN: function (n) { return "Day " + n; },
+      days: "Day by day", backup: "If it rains or something is closed: ",
+      exhibitions: "On show while you're there", until: function (s) { return "until " + s; },
+      events: "Events while you're there",
+      shows: "Big concerts and stand-up comedy",
+      k_concert: "Concert", k_comedy: "Stand-up", k_theatre: "Theatre / opera", k_festival: "Festival", k_other: "Show",
+      s_onsale: "On sale", s_few: "Few left", s_soldout: "Sold out", s_resale: "Resale only", s_soon: "On sale soon",
+      media: "Films, books and documentaries before you go",
+      m_film: "Films", m_doc: "Documentaries", m_series: "Series", m_book: "Books", m_podcast: "Podcasts", m_other: "Other",
+      tours: "Top-rated free walking tours", thTour: "Tour", thRating: "Rating (reviews)", thWhen: "When", thWhy: "Why this one",
+      pool: "Didn't fit, but your kind of thing",
+      beyond: "Beyond the 1-hour radius, but too famous to skip",
+      skipped: "Popular sights deliberately left out",
+      queried: function (s) { return "Checked " + s + ". Opening hours, prices and exhibition dates can change; check the official sites again before you go."; },
+      mapFail: "Could not draw the map: ",
+      c_market: "Market", c_arch: "Architecture", c_art: "Modern & contemporary art", c_artclassic: "Classical art", c_alt: "Alternative scene",
+      c_view: "Viewpoint", c_ride: "Ride", c_tour: "Walking tour", c_history: "Difficult history", c_nature: "Nature / islands",
+      c_event: "Event", c_food: "Food", c_other: "Other",
+      print: "Print / save as PDF",
+      noData: function (id) { return "No JSON with id=\"" + id + "\" found on the page."; },
+      renderFail: "Could not render the itinerary page: "
+    }
+  };
+
+  /* ---- 共用：双语、HTML 白名单、链接校验 · shared: i18n, HTML allowlist, URL check ---- */
+  var LANG_KEY = "travel-skill-lang";
+  var CUR = /^zh/i.test((navigator.language || "")) ? "zh" : "en";
+  function t(k) {
+    var s = DICT[CUR][k];
+    if (s == null) s = DICT.zh[k];
+    return typeof s === "function" ? s.apply(null, Array.prototype.slice.call(arguments, 1)) : s;
+  }
+  // 本地化字段：任何字符串（或数组）都可以写成 {"zh": "…", "en": "…"}；缺一种语言时退回另一种
+  function isLoc(v) {
+    if (!v || typeof v !== "object" || Array.isArray(v)) return false;
+    var k = Object.keys(v);
+    return k.length > 0 && k.every(function (x) { return x === "zh" || x === "en"; });
+  }
+  function localize(v, lang) {
+    if (isLoc(v)) {
+      var pick = v[lang];
+      if (pick == null || pick === "") pick = v[lang === "zh" ? "en" : "zh"];
+      return localize(pick, lang);
+    }
+    if (Array.isArray(v)) return v.map(function (x) { return localize(x, lang); });
+    if (v && typeof v === "object") {
+      var o = {};
+      Object.keys(v).forEach(function (k) { o[k] = localize(v[k], lang); });
+      return o;
+    }
+    return v;
+  }
+  function scanLangs(v, acc) {
+    if (isLoc(v)) Object.keys(v).forEach(function (k) { if (v[k] != null && v[k] !== "") acc[k] = 1; });
+    if (v && typeof v === "object") Object.keys(v).forEach(function (k) { scanLangs(v[k], acc); });
+    return acc;
+  }
+  function availableLangs(raw) {
+    var langs = (Array.isArray(raw.languages) ? raw.languages : []).filter(function (l) { return l === "zh" || l === "en"; });
+    if (!langs.length) langs = Object.keys(scanLangs(raw, {})).sort().reverse(); // zh 在前
+    if (!langs.length) langs = [raw.lang === "en" ? "en" : "zh"];
+    return langs;
+  }
+  function initialLang(raw, langs) {
+    var q = (location.search.match(/[?&]lang=(zh|en)\b/) || [])[1];
+    var saved = null;
+    try { saved = localStorage.getItem(LANG_KEY); } catch (e) { /* 隐私模式等 */ }
+    var order = [q, saved, raw.lang, CUR, langs[0]];
+    for (var i = 0; i < order.length; i++) if (order[i] && langs.indexOf(order[i]) >= 0) return order[i];
+    return langs[0];
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function safeUrl(u) {
+    u = String(u == null ? "" : u).trim();
+    return /^(https?:|mailto:|#)/i.test(u) ? u : "";
+  }
+  function a(url, text) {
+    var u = safeUrl(url);
+    return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(text) + "</a>" : esc(text);
+  }
+  // 标「html」的字段只保留少量行内标签，链接只允许 http(s) / mailto，其余标签去壳、属性全部去掉
+  var KEEP = { B: 1, STRONG: 1, I: 1, EM: 1, A: 1, BR: 1, SMALL: 1, CODE: 1, SPAN: 1 };
+  var DROP = { SCRIPT: 1, STYLE: 1, IFRAME: 1, OBJECT: 1, EMBED: 1, TEMPLATE: 1, NOSCRIPT: 1, SVG: 1, MATH: 1, LINK: 1, META: 1 };
+  function clean(node) {
+    Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+      if (n.nodeType === 3) return;
+      if (n.nodeType !== 1 || DROP[n.tagName.toUpperCase()]) { node.removeChild(n); return; }
+      clean(n);
+      var tag = n.tagName.toUpperCase();
+      if (!KEEP[tag]) {
+        while (n.firstChild) node.insertBefore(n.firstChild, n);
+        node.removeChild(n);
+        return;
+      }
+      var href = tag === "A" ? safeUrl(n.getAttribute("href")) : "";
+      Array.prototype.slice.call(n.attributes).forEach(function (at) { n.removeAttribute(at.name); });
+      if (href) { n.setAttribute("href", href); n.setAttribute("target", "_blank"); n.setAttribute("rel", "noopener"); }
+    });
+  }
+  function html(s) {
+    if (s == null || s === "") return "";
+    s = String(s);
+    if (!/[<&]/.test(s)) return s;
+    var tpl = document.createElement("template");
+    tpl.innerHTML = s;
+    clean(tpl.content);
+    var box = document.createElement("div");
+    box.appendChild(tpl.content);
+    return box.innerHTML;
+  }
+  function toolbar(langs) {
+    var s = '<div class="toolbar no-print">';
+    if (langs.length > 1) {
+      s += '<div class="lang-switch" role="group" aria-label="Language / 语言">' + langs.map(function (l) {
+        return '<button type="button" data-lang="' + l + '" aria-pressed="' + (l === CUR) + '">' + (l === "zh" ? "中文" : "EN") + "</button>";
+      }).join("") + "</div>";
+    }
+    return s + '<button type="button" class="print-btn" data-print>' + esc(t("print")) + "</button></div>";
+  }
+  // 启动：读 JSON → 选语言 → 渲染；切换语言时保持滚动位置
+  function boot(dataId) {
+    var raw, langs;
+    function draw() {
+      document.documentElement.lang = CUR === "zh" ? "zh-CN" : "en";
+      var d = localize(raw, CUR);
+      render(d, toolbar(langs));
+      if (d.title) document.title = d.title;
+    }
+    try {
+      var el = document.getElementById(dataId);
+      if (!el) throw new Error(t("noData", dataId));
+      raw = JSON.parse(el.textContent);
+      langs = availableLangs(raw);
+      CUR = initialLang(raw, langs);
+      draw();
+    } catch (e) {
+      app.className = "wrap";
+      app.innerHTML = '<div class="render-error">' + esc(t("renderFail")) + esc(e.message) + "</div>";
+      return;
+    }
+    app.addEventListener("click", function (e) {
+      var b = e.target && e.target.closest ? e.target.closest("[data-lang],[data-print]") : null;
+      if (!b) return;
+      if (b.hasAttribute("data-print")) { window.print(); return; }
+      var l = b.getAttribute("data-lang");
+      if (!l || l === CUR) return;
+      CUR = l;
+      try { localStorage.setItem(LANG_KEY, l); } catch (x) { /* ignore */ }
+      var y = window.scrollY;
+      draw();
+      window.scrollTo(0, y);
+    });
+  }
+  /* ---- 共用部分结束 · end of shared part ---- */
+
+
+  var CAT_KEYS = ["market", "arch", "art", "artclassic", "alt", "view", "ride", "tour", "history", "nature", "event", "food", "other"];
+  function isNum(v) { return typeof v === "number" && !isNaN(v); }
+  function catKey(c) { return CAT_KEYS.indexOf(c) >= 0 ? c : "other"; }
+  function cat(c) {
+    var k = catKey(c);
+    return '<span class="cat" style="--cat:var(--c-' + k + ')"><i></i>' + esc(t("c_" + k)) + "</span>";
+  }
+  function list(items) {
+    return items && items.length ? "<ul>" + items.map(function (x) { return "<li>" + html(x) + "</li>"; }).join("") + "</ul>" : "";
+  }
+  function meta(parts) {
+    var p = parts.filter(Boolean).map(esc);
+    return p.length ? '<span class="meta">' + p.join(" · ") + "</span>" : "";
+  }
+  var DAY_COLORS = ["var(--d1)", "var(--d2)", "var(--d3)", "var(--d4)", "var(--d5)", "var(--d6)", "var(--d7)"];
+  function dayColor(i) { return DAY_COLORS[i % DAY_COLORS.length]; }
+
+  function render(d, bar) {
+    var out = [bar];
+    var maps = [];
+    var days = d.days || [];
+
+    // 页头
+    var eyebrow = d.eyebrow || [t("cityCountry", d.city, d.country), d.dateLabel, days.length ? t("daysPlanned", days.length) : "", t("version", d.version || 1)].filter(Boolean).join(" · ");
+    out.push('<header><div class="eyebrow">' + esc(eyebrow) + "</div><h1>" + esc(d.heading || t("heading", d.city)) + '</h1><div class="gilt"></div>');
+    if (d.intro) out.push('<p class="intro">' + html(d.intro) + "</p>");
+    out.push("</header>");
+
+    // 结论
+    if (d.verdict) {
+      out.push('<div class="panel"><h2>' + esc(t("verdict")) + "</h2>" + list(d.verdict.items));
+      (d.verdict.alerts || []).forEach(function (x) { out.push('<p class="alert">' + html(x) + "</p>"); });
+      out.push("</div>");
+    }
+
+    // 需提前预订（按紧急程度排序）
+    if (d.bookAhead && d.bookAhead.length) {
+      var order = { urgent: 0, soon: 1, ok: 2, done: 3 };
+      var rank = function (s) { return order[s] == null ? 2 : order[s]; };
+      var bks = d.bookAhead.slice().sort(function (x, y) { return rank(x.status) - rank(y.status); });
+      out.push('<section class="panel book"><h2>' + esc(t("bookAhead")) + "</h2>");
+      bks.forEach(function (b) {
+        var st = order[b.status] != null ? b.status : "ok";
+        out.push('<div class="bk"><span class="st ' + st + '">' + esc(t("st_" + st)) + '</span><div class="body"><b>' + a(b.url, b.name) + "</b>" +
+          (b.deadline ? '<span class="dl">' + esc(b.deadline) + "</span>" : "") + (b.why ? '<span class="small">' + html(b.why) + "</span>" : "") + "</div></div>");
+      });
+      out.push("</section>");
+    }
+
+    // 行程总图 + 总时间线
+    if (days.length) {
+      var all = [];
+      days.forEach(function (day, i) {
+        (day.stops || []).forEach(function (s, j) {
+          if (isNum(s.lat) && isNum(s.lng)) all.push({ lat: s.lat, lng: s.lng, day: i, n: (i + 1) + "-" + (j + 1), label: s.name });
+        });
+      });
+      out.push('<section class="panel"><h2>' + esc(t("overview")) + "</h2>");
+      if (all.length) {
+        out.push('<div id="map-all" class="mapbox"></div><div class="legend">' + days.map(function (day, i) {
+          return '<span class="cat" style="--cat:' + dayColor(i) + '"><i></i>' + esc(t("dayN", i + 1)) + (day.theme ? " · " + esc(day.theme) : "") + "</span>";
+        }).join("") + '</div><p class="small muted">' + esc(t("overviewNote")) + "</p>");
+        maps.push(["map-all", all, "days"]);
+      }
+      out.push('<div class="tl">');
+      days.forEach(function (day, i) {
+        out.push('<div class="tl-day" style="--day:' + dayColor(i) + '"><div class="tl-head"><b>' + esc(t("dayN", i + 1)) + "</b>" + (day.date ? '<span class="small muted">' + esc(day.date) + "</span>" : "") +
+          '</div><div class="tl-row">' + (day.stops || []).map(function (s, j) {
+            return '<a class="tl-chip" href="#day-' + (i + 1) + '" style="--cat:var(--c-' + catKey(s.cat) + ')"><span class="t">' + esc(s.time || (i + 1) + "-" + (j + 1)) + "</span>" + esc(s.name) + "</a>";
+          }).join('<span class="tl-arrow" aria-hidden="true">→</span>') + "</div></div>");
+      });
+      out.push("</div></section>");
+    }
+
+    // 每天
+    if (days.length) {
+      out.push('<section class="days-wrap"><h2>' + esc(t("days")) + "</h2>");
+      if (d.skipNote) out.push('<p class="small muted">' + html(d.skipNote) + "</p>");
+      if (days.length > 1) {
+        out.push('<nav class="daynav">' + days.map(function (day, i) {
+          return '<a href="#day-' + (i + 1) + '">' + esc(t("dayN", i + 1)) + (day.theme ? " · " + esc(day.theme) : "") + "</a>";
+        }).join("") + "</nav>");
+      }
+      days.forEach(function (day, i) {
+        out.push('<div class="day" id="day-' + (i + 1) + '" style="--day:' + dayColor(i) + '"><div class="day-head"><span class="d">' + esc([t("dayN", i + 1), day.date].filter(Boolean).join(" · ")) +
+          "</span><h3>" + esc(day.theme || "") + "</h3>" + (day.note ? '<p class="small muted">' + html(day.note) + "</p>" : "") + "</div>");
+        var pts = [];
+        out.push('<div class="stops">');
+        (day.stops || []).forEach(function (s, j) {
+          var k = catKey(s.cat);
+          out.push('<div class="stop' + (k === "ride" ? " ride" : "") + '" style="--cat:var(--c-' + k + ')"><div class="top">' +
+            (s.time ? '<span class="t">' + esc(s.time) + "</span>" : "") + '<span class="name">' + a(s.url, s.name) + "</span>" + cat(s.cat) + "</div>" +
+            meta([s.area, s.duration, s.hours, s.price]) +
+            (s.why ? '<span class="why">' + html(s.why) + "</span>" : "") +
+            (s.booking ? '<span class="bk-note">' + html(s.booking) + "</span>" : "") + "</div>");
+          if (isNum(s.lat) && isNum(s.lng)) pts.push({ lat: s.lat, lng: s.lng, n: j + 1, cat: k, label: s.name });
+        });
+        out.push("</div>");
+        if (pts.length) { out.push('<div id="map-day-' + (i + 1) + '" class="mapbox"></div>'); maps.push(["map-day-" + (i + 1), pts, true]); }
+        if (day.backup) out.push('<p class="backup"><b>' + esc(t("backup")) + "</b>" + html(day.backup) + "</p>");
+        out.push("</div>");
+      });
+      out.push("</section>");
+    }
+
+    // 这几天的展览
+    if (d.exhibitions && d.exhibitions.length) {
+      out.push('<section class="panel"><h2>' + esc(t("exhibitions")) + '</h2><div class="items">');
+      d.exhibitions.forEach(function (x) {
+        out.push('<div class="it"><span class="name">' + a(x.url, x.title) + (x.match ? '<span class="match">' + esc(x.match) + "</span>" : "") + "</span>" +
+          meta([x.venue, x.until ? t("until", x.until) : "", x.price]) + (x.why ? "<span>" + html(x.why) + "</span>" : "") + "</div>");
+      });
+      out.push("</div></section>");
+    }
+
+    // 这几天的活动
+    if (d.events && d.events.length) {
+      out.push('<section class="panel"><h2>' + esc(t("events")) + '</h2><div class="items">');
+      d.events.forEach(function (x) {
+        out.push('<div class="it"><span class="name">' + a(x.url, x.name) + " " + cat(x.cat || "event") + "</span>" +
+          meta([x.date, x.place, x.price]) + (x.why ? "<span>" + html(x.why) + "</span>" : "") + "</div>");
+      });
+      out.push("</div></section>");
+    }
+
+    // 大型演出、脱口秀（shows 为空但有 showsNote 时也显示，用来说明「这几天没有」）
+    if ((d.shows && d.shows.length) || d.showsNote) {
+      var SS = { onsale: 1, few: 1, soldout: 1, resale: 1, soon: 1 };
+      out.push('<section class="panel"><h2>' + esc(t("shows")) + "</h2>");
+      if (d.shows && d.shows.length) {
+        out.push('<div class="items">');
+        d.shows.forEach(function (x) {
+          var kind = { concert: 1, comedy: 1, theatre: 1, festival: 1 }[x.kind] ? x.kind : "other";
+          out.push('<div class="it"><span class="name">' + a(x.url, x.name) + '<span class="match">' + esc(t("k_" + kind)) + "</span>" +
+            (SS[x.status] ? '<span class="show-st ' + x.status + '">' + esc(t("s_" + x.status)) + "</span>" : "") + "</span>" +
+            meta([x.date, x.venue, x.lang, x.price]) + (x.why ? "<span>" + html(x.why) + "</span>" : "") + "</div>");
+        });
+        out.push("</div>");
+      }
+      if (d.showsNote) out.push('<p class="small muted">' + html(d.showsNote) + "</p>");
+      out.push("</section>");
+    }
+
+    // 电影、书、纪录片（按类型分组；原名和译名一样时不重复显示）
+    if (d.media && d.media.length) {
+      var MK = ["film", "doc", "series", "book", "podcast", "other"];
+      out.push('<section class="panel"><h2>' + esc(t("media")) + "</h2>" + (d.mediaNote ? '<p class="small muted">' + html(d.mediaNote) + "</p>" : ""));
+      MK.forEach(function (k) {
+        var group = d.media.filter(function (x) { return (MK.indexOf(x.kind) >= 0 ? x.kind : "other") === k; });
+        if (!group.length) return;
+        out.push('<div class="group"><h3>' + esc(t("m_" + k)) + '</h3><div class="items">');
+        group.forEach(function (x) {
+          var orig = x.original && x.original !== x.title ? '<span class="muted" style="font-weight:400"> · ' + esc(x.original) + "</span>" : "";
+          out.push('<div class="it"><span class="name">' + a(x.url, x.title) + orig + (x.tag ? '<span class="match">' + esc(x.tag) + "</span>" : "") + "</span>" +
+            meta([x.year, x.creator, x.lang, x.where]) + (x.why ? "<span>" + html(x.why) + "</span>" : "") + "</div>");
+        });
+        out.push("</div></div>");
+      });
+      out.push("</section>");
+    }
+
+    // free walking tour
+    if (d.tours && d.tours.length) {
+      out.push('<section><h2 class="sec">' + esc(t("tours")) + '</h2><div class="scroll"><table><thead><tr><th>' + esc(t("thTour")) + "</th><th>" + esc(t("thRating")) +
+        "</th><th>" + esc(t("thWhen")) + "</th><th>" + esc(t("thWhy")) + "</th></tr></thead><tbody>");
+      d.tours.forEach(function (x) {
+        out.push("<tr><td>" + a(x.url, x.name) + (x.platform ? '<br><span class="small muted">' + esc(x.platform) + "</span>" : "") + "</td>" +
+          '<td class="rating">' + esc(x.rating || "—") + (x.count ? ' <span class="muted">(' + esc(x.count) + ")</span>" : "") + "</td>" +
+          "<td>" + esc([x.schedule, x.duration, x.lang].filter(Boolean).join(" · ") || "—") + "</td><td>" + html(x.why || "") + "</td></tr>");
+      });
+      out.push("</tbody></table></div>");
+      if (d.toursNote) out.push('<p class="small muted" style="margin-top:8px">' + html(d.toursNote) + "</p>");
+      out.push("</section>");
+    }
+
+    // 备选池
+    if (d.pool && d.pool.length) {
+      var pp = [];
+      out.push('<section class="panel"><h2>' + esc(t("pool")) + '</h2><div class="items">');
+      d.pool.forEach(function (x, i) {
+        out.push('<div class="it"><span class="name">' + a(x.url, x.name) + " " + cat(x.cat) + "</span>" + meta([x.area, x.hours, x.price]) + (x.why ? "<span>" + html(x.why) + "</span>" : "") + "</div>");
+        if (isNum(x.lat) && isNum(x.lng)) pp.push({ lat: x.lat, lng: x.lng, n: i + 1, cat: catKey(x.cat), label: x.name });
+      });
+      out.push("</div>");
+      if (pp.length) { out.push('<div id="map-pool" class="mapbox"></div>'); maps.push(["map-pool", pp, false]); }
+      out.push("</section>");
+    }
+
+    // 1 小时圈外
+    if (d.beyond && d.beyond.length) {
+      out.push('<section class="panel"><h2>' + esc(t("beyond")) + '</h2><div class="items">');
+      d.beyond.forEach(function (x) {
+        out.push('<div class="it"><span class="name">' + a(x.url, x.name) + " " + cat(x.cat) + "</span>" + meta([x.distance]) +
+          (x.why ? "<span>" + html(x.why) + "</span>" : "") + (x.booking ? '<span class="small bk-note">' + html(x.booking) + "</span>" : "") + "</div>");
+      });
+      out.push("</div></section>");
+    }
+
+    // 有意跳过
+    if (d.skipped && d.skipped.length) {
+      out.push('<section class="excluded"><h2>' + esc(t("skipped")) + "</h2>" + d.skipped.map(function (e) {
+        return '<div class="ex"><b>' + esc(e.name) + "</b><span>" + html(e.why) + "</span></div>";
+      }).join("") + "</section>");
+    }
+
+    // 图例
+    out.push('<div class="legend">' + CAT_KEYS.filter(function (k) { return k !== "other"; }).map(cat).join("") + "</div>");
+
+    // 页脚
+    var f = d.footer || {};
+    out.push("<footer><p>" + esc(t("queried", d.queriedAt || "")) + "</p>");
+    (f.paragraphs || []).forEach(function (p) { out.push("<p>" + html(p) + "</p>"); });
+    if (f.links && f.links.length) {
+      out.push("<ul>" + f.links.map(function (row) {
+        return "<li>" + (Array.isArray(row) ? row : [row]).map(function (l) { return a(l.url, l.text); }).join(" · ") + "</li>";
+      }).join("") + "</ul>");
+    }
+    out.push("</footer>");
+
+    app.className = "wrap";
+    app.innerHTML = out.join("");
+    maps.forEach(function (m) { buildMap(m[0], m[1], m[2]); });
+  }
+
+  // 自绘示意地图：等距投影、按纬度修正比例，带编号、路线虚线、比例尺、指北针。不联网、不用地图库。
+  // path: true = 按顺序连一条线（每天的图）；"days" = 每天一条同色线、点按天着色（总图）；false = 不连线
+  function buildMap(id, pts, path) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    try {
+      var W = 640, H = 300, PAD = 34;
+      var lats = pts.map(function (p) { return p.lat; }), lngs = pts.map(function (p) { return p.lng; });
+      var minLat = Math.min.apply(null, lats), maxLat = Math.max.apply(null, lats);
+      var minLng = Math.min.apply(null, lngs), maxLng = Math.max.apply(null, lngs);
+      if (maxLat - minLat < 0.004) { var cl = (minLat + maxLat) / 2; minLat = cl - 0.006; maxLat = cl + 0.006; }
+      if (maxLng - minLng < 0.004) { var cg = (minLng + maxLng) / 2; minLng = cg - 0.008; maxLng = cg + 0.008; }
+      var cosLat = Math.max(0.15, Math.cos((minLat + maxLat) / 2 * Math.PI / 180));
+      var spanX = (maxLng - minLng) * cosLat, spanY = maxLat - minLat;
+      var scale = Math.min((W - PAD * 2) / spanX, (H - PAD * 2) / spanY);
+      var offX = PAD + ((W - PAD * 2) - spanX * scale) / 2, offY = PAD + ((H - PAD * 2) - spanY * scale) / 2;
+      function P(p) { return [offX + (p.lng - minLng) * cosLat * scale, offY + (maxLat - p.lat) * scale]; }
+      var pxPerKm = scale / 111.32;
+      var km = [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100].reduce(function (b, k) { var px = k * pxPerKm; return px >= 40 && px <= 120 ? k : b; }, null) || 1;
+      var bar = km * pxPerKm;
+      var many = path === "days";
+      var s = ['<svg viewBox="0 0 ' + W + " " + H + '" xmlns="http://www.w3.org/2000/svg" role="img">'];
+      for (var gx = 1; gx < 4; gx++) s.push('<line x1="' + W / 4 * gx + '" y1="0" x2="' + W / 4 * gx + '" y2="' + H + '" class="map-grid"/>');
+      for (var gy = 1; gy < 3; gy++) s.push('<line x1="0" y1="' + H / 3 * gy + '" x2="' + W + '" y2="' + H / 3 * gy + '" class="map-grid"/>');
+      function line(ps, color) {
+        if (ps.length < 2) return;
+        s.push('<polyline class="map-path"' + (color ? ' style="stroke:' + color + ';opacity:.9"' : "") + ' points="' +
+          ps.map(function (p) { return P(p).map(function (v) { return v.toFixed(1); }).join(","); }).join(" ") + '"/>');
+      }
+      if (many) {
+        var byDay = {};
+        pts.forEach(function (p) { (byDay[p.day] = byDay[p.day] || []).push(p); });
+        Object.keys(byDay).forEach(function (k) { line(byDay[k], dayColor(+k)); });
+      } else if (path) line(pts);
+      s.push('<g class="map-compass" transform="translate(' + (W - 26) + ',24)"><line x1="0" y1="11" x2="0" y2="-9"/><polygon points="0,-13 -5,-3 5,-3"/><text y="23" text-anchor="middle">N</text></g>');
+      s.push('<g class="map-scale"><line x1="' + PAD + '" y1="' + (H - 14) + '" x2="' + (PAD + bar) + '" y2="' + (H - 14) + '"/><text x="' + (PAD + bar / 2) + '" y="' + (H - 20) + '" text-anchor="middle">' + km + " km</text></g>");
+      pts.forEach(function (p, i) {
+        var xy = P(p), x = xy[0], y = xy[1];
+        var anchor = x > W - 100 ? "end" : (x < 100 ? "start" : "middle");
+        var fill = many ? dayColor(p.day) : "var(--c-" + p.cat + ")";
+        s.push('<g><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (many ? 11 : 9) + '" class="map-dot" style="fill:' + fill + '"><title>' + esc(p.label) + "</title></circle>" +
+          '<text x="' + x.toFixed(1) + '" y="' + (y + 3.5).toFixed(1) + '" text-anchor="middle" class="map-num"' + (many ? ' style="font-size:8.5px"' : "") + ">" + p.n + "</text>" +
+          // 总图点多时只在点少的情况下写名字，其余靠悬停和下面的时间线
+          (!many || pts.length <= 12 ? '<text x="' + x.toFixed(1) + '" y="' + (y + (i % 2 ? 24 : -15)).toFixed(1) + '" text-anchor="' + anchor + '" class="map-label">' + esc(p.label) + "</text>" : "") + "</g>");
+      });
+      s.push("</svg>");
+      el.innerHTML = s.join("");
+    } catch (e) {
+      el.outerHTML = '<p class="small muted">' + esc(t("mapFail")) + esc(e.message) + "</p>";
+    }
+  }
+
+  boot("trip-data");
+})();
+
+</script>
+</body>
+</html>
